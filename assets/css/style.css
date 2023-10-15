@@ -259,33 +259,33 @@ body {
 
 @media only screen and (max-width: 767px) {
   .ex3 .g1 .i1 {
-    top: 73.3vw;
+    top: 73.3vw !important;
     background-color: red;
   }
   .ex3 .g1 .i2 {
-    top: 79.05vw;
+    top: 79.05vw !important;
   }
   .ex3 .g1 button {
-    top: 74.8vw;
+    top: 74.8vw !important;
   }
   .ex3 .g2 .i3 {
-    top: 111.7vw;
+    top: 111.7vw !important;
   }
   .ex3 .g2 .i4 {
-    top: 117.45vw;
+    top: 117.45vw !important;
   }
   .ex3 .g2 button {
-    top: 114.4vw;
+    top: 114.4vw !important;
   }
   .ex3 .g3 .i5 {
-    left: -32.76vw;
+    left: -32.76vw !important;
   }
   .ex3 .g3 .i6 {
-    left: -28.47vw;
+    left: -28.47vw !important;
   }
   .ex3 .g3 button {
-    top: 165.6vw;
-    left: -1.5vw;
+    top: 165.6vw !important;
+    left: -1.5vw !important;
     padding: 0.3vw 0.8vw;
     background-color: red !important;
   }
