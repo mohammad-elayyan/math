@@ -1,0 +1,258 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-size: 1.5vw;
+  direction: rtl;
+}
+
+.s1 {
+  background-image: url(../images/start/start.png);
+  background-size: contain;
+  background-position: top center;
+  background-repeat: no-repeat;
+  min-width: 100% !important;
+  height: 57vw;
+  max-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 1vw 2vw;
+  position: relative;
+}
+.s1 .start-btn {
+  width: 13vw;
+  max-width: 170px;
+  position: absolute;
+  bottom: 1.45vw;
+  cursor: pointer;
+}
+
+.header,
+.bottom {
+  background-size: cover;
+  background-position: top center;
+  background-repeat: no-repeat;
+  min-width: 100% !important;
+  display: none;
+  justify-content: flex-start;
+  align-items: flex-start;
+  padding: 1vw 2vw;
+  position: relative;
+}
+
+.header {
+  background-image: url(../images/b/Header\ Bar-8.png);
+  height: 33.8vw;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  flex-direction: column;
+}
+.header .header-icons {
+  margin-right: auto;
+}
+.header .header-icons img {
+  width: 4vw;
+  margin: 0.5vw 0.7vw;
+  cursor: pointer;
+  max-width: 65px;
+}
+.header .header-icons img:hover {
+  filter: drop-shadow(0 0 0.2vw #738eb8);
+}
+.header .popups {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+.header .popups .btns {
+  display: flex;
+  margin-top: 4vw;
+  margin-right: auto;
+  margin-left: 2vw;
+}
+.header .popups .title {
+  position: relative;
+}
+.header .popups .title img {
+  height: 3.5vw;
+  position: absolute;
+  top: 3.5vw;
+  right: 6vw;
+}
+.header .popups .btns img {
+  width: 23vw;
+  cursor: pointer;
+}
+.header .popups .btns img:hover {
+  filter: drop-shadow(0 0 0.4vw #fff);
+}
+
+.bottom {
+  background-image: url(../images/b/bottom.png);
+  height: 77vw;
+}
+.bottom .gloss,
+.bottom .ex {
+  position: relative;
+  top: 34vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+.bottom .gloss .content img,
+.bottom .ex .content img {
+  width: 80vw;
+}
+.bottom .gloss .btns,
+.bottom .ex .btns {
+  display: flex;
+}
+.bottom .gloss .btns img,
+.bottom .ex .btns img {
+  width: 28vw;
+  cursor: pointer;
+}
+.bottom .gloss .navigator,
+.bottom .ex .navigator {
+  position: absolute;
+  top: 0;
+  right: 4.5vw;
+}
+.bottom .gloss .navigator img,
+.bottom .ex .navigator img {
+  width: 11vw;
+}
+.bottom .gloss .navigator button,
+.bottom .ex .navigator button {
+  position: absolute;
+  width: 4.4vw;
+  height: 3.4vw;
+  background: transparent;
+  border: none;
+  right: 2vw;
+  cursor: pointer;
+}
+.bottom .gloss .navigator .nav1,
+.bottom .ex .navigator .nav1 {
+  top: 3.1vw;
+}
+.bottom .gloss .navigator .nav2,
+.bottom .ex .navigator .nav2 {
+  top: 7.4vw;
+}
+.bottom .gloss .navigator .nav3,
+.bottom .ex .navigator .nav3 {
+  top: 11.8vw;
+}
+.bottom .gloss .navigator .nav4,
+.bottom .ex .navigator .nav4 {
+  top: 16.2vw;
+}
+.bottom .gloss .ex3 div:not(.navigator) button,
+.bottom .ex .ex3 div:not(.navigator) button {
+  background-color: #6fafcd;
+  border-radius: 6px;
+  border: none;
+  color: #fff;
+  font-size: 2vw;
+  font-family: "Tajawal", sans-serif;
+  font-weight: 700;
+  padding: 0.8vw 2vw;
+  box-shadow: 0 0.1vw 0.2vw 0.2vw #e1e1e1;
+  cursor: pointer;
+  position: absolute;
+  left: 1.5vw;
+  width: 19vw;
+}
+.bottom .gloss .ex3 div:not(.navigator) button:hover,
+.bottom .ex .ex3 div:not(.navigator) button:hover {
+  background-color: #6ba6c1;
+  box-shadow: 0 0.15vw 0.2vw 0.2vw #c3c3c3;
+}
+.bottom .gloss .ex3 input,
+.bottom .ex .ex3 input {
+  width: 3.8vw;
+  height: 3.7vw;
+  outline: none;
+  font-size: 3vw;
+  font-family: "Tajawal", sans-serif;
+  text-align: center;
+  border: none;
+  background: transparent;
+  position: absolute;
+  left: -22vw;
+}
+.bottom .gloss .ex3 div div,
+.bottom .ex .ex3 div div {
+  display: flex;
+  flex-direction: column;
+}
+.bottom .gloss .ex3 .g1,
+.bottom .ex .ex3 .g1 {
+  position: relative;
+}
+.bottom .gloss .ex3 .g1 .i1,
+.bottom .ex .ex3 .g1 .i1 {
+  top: 72.3vw;
+}
+.bottom .gloss .ex3 .g1 .i2,
+.bottom .ex .ex3 .g1 .i2 {
+  top: 78.05vw;
+}
+.bottom .gloss .ex3 .g1 button,
+.bottom .ex .ex3 .g1 button {
+  top: 74.8vw;
+}
+.bottom .gloss .ex3 .g2,
+.bottom .ex .ex3 .g2 {
+  position: relative;
+}
+.bottom .gloss .ex3 .g2 .i3,
+.bottom .ex .ex3 .g2 .i3 {
+  top: 111.7vw;
+}
+.bottom .gloss .ex3 .g2 .i4,
+.bottom .ex .ex3 .g2 .i4 {
+  top: 117.45vw;
+}
+.bottom .gloss .ex3 .g2 button,
+.bottom .ex .ex3 .g2 button {
+  top: 114.4vw;
+}
+.bottom .gloss .ex3 .g3,
+.bottom .ex .ex3 .g3 {
+  position: relative;
+}
+.bottom .gloss .ex3 .g3 .i5,
+.bottom .ex .ex3 .g3 .i5 {
+  left: -33.76vw;
+}
+.bottom .gloss .ex3 .g3 .i6,
+.bottom .ex .ex3 .g3 .i6 {
+  left: -29.47vw;
+}
+.bottom .gloss .ex3 .g3 button,
+.bottom .ex .ex3 .g3 button {
+  top: 165.6vw;
+  left: -1.5vw;
+  padding: 0.3vw 0.8vw;
+}
+.bottom .gloss .ex3 .g3 div,
+.bottom .ex .ex3 .g3 div {
+  flex-direction: row;
+  gap: 1.22vw;
+}
+.bottom .gloss .ex3 .g3 input,
+.bottom .ex .ex3 .g3 input {
+  width: 3vw;
+  height: 3vw;
+  top: 166.35vw;
+}/*# sourceMappingURL=style.css.map */
