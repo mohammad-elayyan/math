@@ -277,52 +277,61 @@ body {
     }
 }
 
-@media (max-width:500px) {
-    .g1 {
-        .i1 {
-            top: 73.3vw;
-        }
-
-        .i2 {
-            top: 79.05vw;
-        }
-
-        button {
-            top: 74.8vw;
+@mixin breakpoints($point) {
+    @if $point==mobile {
+        @media only screen and (max-width:767px) {
+            @content;
         }
     }
+}
 
-    .g2 {
+.ex3 {
+    @include breakpoints(mobile) {
+        .g1 {
+            .i1 {
+                top: 73.3vw;
+                background-color: red;
+            }
 
+            .i2 {
+                top: 79.05vw;
+            }
 
-        .i3 {
-            top: 111.7vw;
+            button {
+                top: 74.8vw;
+            }
         }
 
-        .i4 {
-            top: 117.45vw;
+        .g2 {
+
+            .i3 {
+                top: 111.7vw;
+            }
+
+            .i4 {
+                top: 117.45vw;
+            }
+
+            button {
+                top: 114.4vw;
+            }
         }
 
-        button {
-            top: 114.4vw;
-        }
-    }
+        .g3 {
+            .i5 {
+                left: -32.76vw;
+            }
 
-    .g3 {
+            .i6 {
+                left: -28.47vw;
+            }
 
-
-        .i5 {
-            left: -32.76vw;
-        }
-
-        .i6 {
-            left: -28.47vw;
-        }
-
-        button {
-            top: 165.6vw;
-            left: -1.5vw;
-            padding: .3vw .8vw;
+            button {
+                top: 165.6vw;
+                left: -1.5vw;
+                padding: .3vw .8vw;
+                background-color: red !important;
+            }
         }
     }
 }

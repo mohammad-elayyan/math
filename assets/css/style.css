@@ -257,34 +257,36 @@ body {
   top: 166.35vw;
 }
 
-@media (max-width: 500px) {
-  .g1 .i1 {
+@media only screen and (max-width: 767px) {
+  .ex3 .g1 .i1 {
     top: 73.3vw;
+    background-color: red;
   }
-  .g1 .i2 {
+  .ex3 .g1 .i2 {
     top: 79.05vw;
   }
-  .g1 button {
+  .ex3 .g1 button {
     top: 74.8vw;
   }
-  .g2 .i3 {
+  .ex3 .g2 .i3 {
     top: 111.7vw;
   }
-  .g2 .i4 {
+  .ex3 .g2 .i4 {
     top: 117.45vw;
   }
-  .g2 button {
+  .ex3 .g2 button {
     top: 114.4vw;
   }
-  .g3 .i5 {
+  .ex3 .g3 .i5 {
     left: -32.76vw;
   }
-  .g3 .i6 {
+  .ex3 .g3 .i6 {
     left: -28.47vw;
   }
-  .g3 button {
+  .ex3 .g3 button {
     top: 165.6vw;
     left: -1.5vw;
     padding: 0.3vw 0.8vw;
+    background-color: red !important;
   }
 }/*# sourceMappingURL=style.css.map */
