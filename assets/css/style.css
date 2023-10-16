@@ -329,10 +329,10 @@ body {
 
 @media only screen and (max-width: 991px) {
   .ex3 .g1 .i1 {
-    top: 73.3vw !important;
+    top: 73.5vw !important;
   }
   .ex3 .g1 .i2 {
-    top: 79.05vw !important;
+    top: 79.25vw !important;
   }
   .ex3 .g1 input {
     height: initial;
@@ -341,10 +341,10 @@ body {
     top: 74.8vw !important;
   }
   .ex3 .g2 .i3 {
-    top: 112.8vw !important;
+    top: 113vw !important;
   }
   .ex3 .g2 .i4 {
-    top: 118.7vw !important;
+    top: 118.9vw !important;
   }
   .ex3 .g2 input {
     height: initial;
@@ -354,7 +354,7 @@ body {
   }
   .ex3 .g3 .i5,
   .ex3 .g3 .i6 {
-    top: 168.1vw !important;
+    top: 168.3vw !important;
   }
   .ex3 .g3 input {
     height: initial;
