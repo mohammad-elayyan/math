@@ -45,7 +45,7 @@ body {
 }
 
 .header {
-  background-image: url(../images/b/Header\ Bar-8.svg);
+  background-image: url(../images/b/Header\ Bar-8.png);
   height: 33.8vw;
   position: absolute;
   top: 0;
@@ -83,7 +83,7 @@ body {
 .header .popups .title img {
   height: 3.5vw;
   position: absolute;
-  top: 4.5vw;
+  top: 3.5vw;
   right: 6vw;
 }
 .header .popups .btns img {
