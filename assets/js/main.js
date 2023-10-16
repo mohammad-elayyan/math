@@ -211,9 +211,7 @@ function exHandler(action) {
                         <img src="./assets/images/ex3/q1t.svg" class="box z-3" style="top: 69.7vw;" alt="" />
                         <img src="./assets/images/ex3/t.svg" class="feedback z-3" style="top: 51vw;" alt="" />
                         <h1 class="z-4" style="top: 74.9vw;">${
-                          (inputs[i].value / inputs[(i = 1)].value).length > 4
-                            ? inputs[i].value / inputs[(i = 1)].value.toFixed(4)
-                            : inputs[i].value / inputs[(i = 1)].value
+                          inputs[i].value / inputs[(i = 1)].value
                         }</h1>
                           <button class="fb-btn z-4">أحسنت</button>`;
                       } else {
@@ -222,9 +220,7 @@ function exHandler(action) {
                         <img src="./assets/images/ex3/q1f.svg" class="box z-3" style="top: 69.7vw;" alt="" />
                         <img src="./assets/images/ex3/f.svg" class="feedback z-3" style="top: 51vw;" alt="" />
                         <h1 class="z-4" style="top: 74.9vw;color:#dc767c;">${
-                          (inputs[i].value / inputs[(i = 1)].value).length > 4
-                            ? inputs[i].value / inputs[(i = 1)].value.toFixed(4)
-                            : inputs[i].value / inputs[(i = 1)].value
+                          inputs[i].value / inputs[(i = 1)].value
                         }</h1>
                         <button onclick="removeOverlay()" class="fb-btn retry z-4">إعادة المحاولة</button>`;
                         inputs[0].style.color = "#dc767c";
@@ -247,9 +243,7 @@ function exHandler(action) {
                         <img src="./assets/images/ex3/q2t.svg" class="box z-3" style="top: 109.2vw;" alt="" />
                         <img src="./assets/images/ex3/t.svg" class="feedback z-3" style="top: 90vw;" alt="" />
                         <h1 class="z-4" style="top: 114.25vw;">${
-                          (inputs[i].value / inputs[(i = 1)].value).length > 4
-                            ? inputs[i].value / inputs[(i = 1)].value.toFixed(4)
-                            : inputs[i].value / inputs[(i = 1)].value
+                          inputs[i].value / inputs[(i = 1)].value
                         }</h1>
                           <button class="fb-btn z-4">أحسنت</button>`;
                       } else {
@@ -258,9 +252,7 @@ function exHandler(action) {
                         <img src="./assets/images/ex3/q2f.svg" class="box z-3" style="top: 109.2vw;" alt="" />
                         <img src="./assets/images/ex3/f.svg" class="feedback z-3" style="top: 90vw;" alt="" />
                         <h1 class="z-4" style="top: 114.25vw;color:#dc767c;">${
-                          (inputs[i].value / inputs[(i = 1)].value).length > 4
-                            ? inputs[i].value / inputs[(i = 1)].value.toFixed(4)
-                            : inputs[i].value / inputs[(i = 1)].value
+                          inputs[i].value / inputs[(i = 1)].value
                         }</h1>
                         <button onclick="removeOverlay()" class="fb-btn retry z-4">إعادة المحاولة</button>`;
                         inputs[0].style.color = "#dc767c";

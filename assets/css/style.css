@@ -45,7 +45,7 @@ body {
 }
 
 .header {
-  background-image: url(../images/b/Header\ Bar-8.png);
+  background-image: url(../images/b/Header\ Bar-8.svg);
   height: 33.8vw;
   position: absolute;
   top: 0;
@@ -183,8 +183,9 @@ body {
 .bottom .gloss .ex3 .overlay h1,
 .bottom .ex .ex3 .overlay h1 {
   position: absolute;
-  left: -14.5vw;
+  left: -14.1vw;
   font-family: "Tajawal", sans-serif;
+  font-size: 2.5vw;
   font-weight: 500;
 }
 .bottom .gloss .ex3 .overlay .x,
@@ -251,7 +252,7 @@ body {
   width: 3.8vw;
   height: 4.9vw;
   outline: none;
-  font-size: 3vw;
+  font-size: 2.5vw;
   font-family: "Tajawal", sans-serif;
   font-weight: 500;
   text-align: center;
@@ -328,6 +329,12 @@ body {
 }
 
 @media only screen and (max-width: 991px) {
+  .ex3 .g1 .box {
+    top: 71vw !important;
+  }
+  .ex3 .g1 h1 {
+    top: 76.5vw !important;
+  }
   .ex3 .g1 .i1 {
     top: 73.5vw !important;
   }
@@ -337,8 +344,14 @@ body {
   .ex3 .g1 input {
     height: initial;
   }
-  .ex3 .g1 button {
-    top: 74.8vw !important;
+  .ex3 .g1 button:not(.x) {
+    top: 76.6vw !important;
+  }
+  .ex3 .g2 .box {
+    top: 110.7vw !important;
+  }
+  .ex3 .g2 h1 {
+    top: 115.95vw !important;
   }
   .ex3 .g2 .i3 {
     top: 113.3vw !important;
@@ -349,8 +362,11 @@ body {
   .ex3 .g2 input {
     height: initial;
   }
-  .ex3 .g2 button {
+  .ex3 .g2 button:not(.x) {
     top: 114.4vw !important;
+  }
+  .ex3 .g3 .box {
+    top: 165.6vw !important;
   }
   .ex3 .g3 .i5,
   .ex3 .g3 .i6 {
@@ -359,8 +375,8 @@ body {
   .ex3 .g3 input {
     height: initial;
   }
-  .ex3 .g3 button {
-    top: 165.6vw !important;
+  .ex3 .g3 button:not(.x) {
+    top: 168vw !important;
     left: -1.5vw !important;
     padding: 0.3vw 0.8vw;
   }
