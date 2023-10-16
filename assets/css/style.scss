@@ -108,6 +108,22 @@ body {
     background-image: url(../images/b/bottom.png);
     height: 77vw;
 
+    .z-1 {
+        z-index: 1;
+    }
+
+    .z-2 {
+        z-index: 2;
+    }
+
+    .z-3 {
+        z-index: 3;
+    }
+
+    .z-4 {
+        z-index: 4;
+    }
+
     .gloss,
     .ex {
         position: relative;
@@ -168,6 +184,47 @@ body {
 
         .ex3 {
 
+            .overlay {
+                .box {
+                    position: absolute;
+                    left: -42.9vw;
+                    width: 68vw;
+                }
+
+                .feedback {
+                    position: absolute;
+                    width: 26vw;
+                    left: -3vw;
+                }
+
+                h1 {
+                    position: absolute;
+                    left: -14.5vw;
+                    font-family: "Tajawal", sans-serif;
+                    font-weight: 500;
+                }
+
+                .x {
+                    left: -1.6vw;
+                    width: 1vw;
+                    padding: 1.5vw;
+                    background: transparent !important;
+                    box-shadow: none !important;
+                }
+
+                &::after {
+
+                    content: "";
+                    position: fixed;
+                    width: 100%;
+                    height: 100vh;
+                    top: 0;
+                    left: 0;
+                    background: rgba(0, 0, 0, 0.7);
+                    z-index: inherit;
+                }
+            }
+
             div:not(.navigator) button {
                 // margin-left: 16vw;
                 background-color: #6fafcd;
@@ -190,12 +247,32 @@ body {
                 }
             }
 
+            .fb-btn {
+                cursor: default !important;
+
+                &:hover {
+                    background-color: #6fafcd !important;
+                    box-shadow: none !important;
+                }
+            }
+
+            .retry {
+                background-color: #7e4d7c !important;
+
+                &:hover {
+                    background-color: #714670 !important;
+                    box-shadow: 0 .15vw .2vw .2vw #c3c3c3 !important;
+                    cursor: pointer !important;
+                }
+            }
+
             input {
                 width: 3.8vw;
-                height: 3.7vw;
+                height: 4.9vw;
                 outline: none;
                 font-size: 3vw;
                 font-family: "Tajawal", sans-serif;
+                font-weight: 500;
                 text-align: center;
                 border: none;
                 background: transparent;
@@ -205,7 +282,7 @@ body {
 
             div {
 
-                div {
+                div:not(.overlay) {
                     display: flex;
                     flex-direction: column;
                 }
@@ -225,7 +302,7 @@ body {
                 }
 
                 button {
-                    top: 74.8vw;
+                    top: 75vw;
                 }
             }
 
@@ -241,7 +318,7 @@ body {
                 }
 
                 button {
-                    top: 114.4vw;
+                    top: 114.6vw;
                 }
             }
 
@@ -257,7 +334,7 @@ body {
                 }
 
                 button {
-                    top: 165.6vw;
+                    top: 166.5vw;
                     left: -1.5vw;
                     padding: .3vw .8vw;
                 }
@@ -268,8 +345,8 @@ body {
                 }
 
                 input {
-                    width: 3vw;
-                    height: 3vw;
+                    width: 2.7vw;
+                    height: 4.8vw;
                     top: 166.35vw;
                 }
             }
@@ -277,61 +354,61 @@ body {
     }
 }
 
-@mixin breakpoints($point) {
-    @if $point==mobile {
-        @media only screen and (max-width:767px) {
-            @content;
-        }
-    }
-}
+// @mixin breakpoints($point) {
+//     @if $point==mobile {
+//         @media only screen and (max-width:767px) {
+//             @content;
+//         }
+//     }
+// }
 
-.ex3 {
-    @include breakpoints(mobile) {
-        .g1 {
-            .i1 {
-                top: 73.3vw !important;
-                background-color: red;
-            }
+// .ex3 {
+//     @include breakpoints(mobile) {
+//         .g1 {
+//             .i1 {
+//                 top: 73.3vw !important;
+//                 background-color: red;
+//             }
 
-            .i2 {
-                top: 79.05vw !important;
-            }
+//             .i2 {
+//                 top: 79.05vw !important;
+//             }
 
-            button {
-                top: 74.8vw !important;
-            }
-        }
+//             button {
+//                 top: 74.8vw !important;
+//             }
+//         }
 
-        .g2 {
+//         .g2 {
 
-            .i3 {
-                top: 111.7vw !important;
-            }
+//             .i3 {
+//                 top: 111.7vw !important;
+//             }
 
-            .i4 {
-                top: 117.45vw !important;
-            }
+//             .i4 {
+//                 top: 117.45vw !important;
+//             }
 
-            button {
-                top: 114.4vw !important;
-            }
-        }
+//             button {
+//                 top: 114.4vw !important;
+//             }
+//         }
 
-        .g3 {
-            .i5 {
-                left: -32.76vw !important;
-            }
+//         .g3 {
+//             .i5 {
+//                 left: -32.76vw !important;
+//             }
 
-            .i6 {
-                left: -28.47vw !important;
-            }
+//             .i6 {
+//                 left: -28.47vw !important;
+//             }
 
-            button {
-                top: 165.6vw !important;
-                left: -1.5vw !important;
-                padding: .3vw .8vw;
-                background-color: red !important;
-            }
-        }
-    }
-}
+//             button {
+//                 top: 165.6vw !important;
+//                 left: -1.5vw !important;
+//                 padding: .3vw .8vw;
+//                 background-color: red !important;
+//             }
+//         }
+//     }
+// }

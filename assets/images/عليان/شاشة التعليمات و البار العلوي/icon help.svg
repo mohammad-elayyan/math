@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_2" data-name="Layer 2" xmlns="http://www.w3.org/2000/svg" width="81.09" height="81.09" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 81.09 81.09">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: url(#linear-gradient);
+      }
+
+      .cls-1, .cls-2, .cls-3, .cls-4, .cls-5 {
+        stroke-width: 0px;
+      }
+
+      .cls-2 {
+        fill: #fff;
+      }
+
+      .cls-3 {
+        fill: #ededed;
+      }
+
+      .cls-4 {
+        fill: url(#linear-gradient-2);
+      }
+
+      .cls-5 {
+        fill: url(#linear-gradient-3);
+      }
+    </style>
+    <linearGradient id="linear-gradient" x1="0" y1="40.55" x2="81.09" y2="40.55" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#52b2cf"/>
+      <stop offset="1" stop-color="#58beb9"/>
+    </linearGradient>
+    <linearGradient id="linear-gradient-2" x1="95.73" y1="56.34" x2="104.02" y2="56.34" gradientTransform="translate(141.54) rotate(-180) scale(1 -1)" xlink:href="#linear-gradient"/>
+    <linearGradient id="linear-gradient-3" x1="89.88" y1="34.5" x2="112.1" y2="34.5" gradientTransform="translate(141.54) rotate(-180) scale(1 -1)" xlink:href="#linear-gradient"/>
+  </defs>
+  <g id="Layer_2-2" data-name="Layer 2">
+    <g>
+      <path class="cls-1" d="m40.55,0C18.15,0,0,18.15,0,40.55s18.15,40.55,40.55,40.55,40.55-18.15,40.55-40.55S62.94,0,40.55,0Zm0,74.33c-18.66,0-33.79-15.13-33.79-33.79S21.89,6.76,40.55,6.76s33.79,15.13,33.79,33.79-15.13,33.79-33.79,33.79Z"/>
+      <path class="cls-3" d="m40.55,5.97C21.45,5.97,5.97,21.45,5.97,40.55s15.48,34.57,34.57,34.57,34.57-15.48,34.57-34.57S59.64,5.97,40.55,5.97Zm0,66c-17.36,0-31.43-14.07-31.43-31.43s14.07-31.43,31.43-31.43,31.43,14.07,31.43,31.43-14.07,31.43-31.43,31.43Z"/>
+      <circle class="cls-2" cx="40.55" cy="40.55" r="31.43"/>
+      <g>
+        <path class="cls-4" d="m41.68,52.17c2.28,0,4.12,1.9,4.12,4.17s-1.79,4.17-4.12,4.17-4.17-1.95-4.17-4.17,1.9-4.17,4.17-4.17h0Z"/>
+        <path class="cls-5" d="m40.98,20.57c7.32,0,10.68,4.34,10.68,7.26,0,2.11-1.79,3.09-3.25,3.09-2.93,0-1.73-4.17-7.26-4.17-2.71,0-4.88,1.19-4.88,3.69,0,2.93,3.03,4.61,4.82,6.12,1.57,1.35,3.63,3.58,3.63,8.24,0,2.82-.76,3.63-2.98,3.63-2.66,0-3.2-1.19-3.2-2.22,0-2.82-.05-4.44-3.03-6.77-1.46-1.14-6.07-4.82-6.07-9.92s4.61-8.94,11.54-8.94h0Z"/>
+      </g>
+    </g>
+  </g>
+</svg>
