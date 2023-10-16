@@ -325,4 +325,44 @@ body {
   width: 2.7vw;
   height: 4.8vw;
   top: 166.35vw;
+}
+
+@media only screen and (max-width: 991px) {
+  .ex3 .g1 .i1 {
+    top: 73.3vw !important;
+  }
+  .ex3 .g1 .i2 {
+    top: 79.05vw !important;
+  }
+  .ex3 .g1 input {
+    height: initial;
+  }
+  .ex3 .g1 button {
+    top: 74.8vw !important;
+  }
+  .ex3 .g2 .i3 {
+    top: 112.8vw !important;
+  }
+  .ex3 .g2 .i4 {
+    top: 118.7vw !important;
+  }
+  .ex3 .g2 input {
+    height: initial;
+  }
+  .ex3 .g2 button {
+    top: 114.4vw !important;
+  }
+  .ex3 .g3 .i5,
+  .ex3 .g3 .i6 {
+    top: 168.1vw !important;
+  }
+  .ex3 .g3 input {
+    height: initial;
+  }
+  .ex3 .g3 button {
+    top: 165.6vw !important;
+    left: -1.5vw !important;
+    padding: 0.3vw 0.8vw;
+    background-color: red !important;
+  }
 }/*# sourceMappingURL=style.css.map */
