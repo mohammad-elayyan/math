@@ -34,7 +34,7 @@ home.addEventListener("click", () => {
     popupsBtns[i].src.indexOf("sel") != -1 &&
       (popupsBtns[i].src =
         popupsBtns[i].src.slice(0, popupsBtns[i].src.lastIndexOf("-")) +
-        ".png");
+        ".svg");
   }
 });
 
@@ -44,25 +44,25 @@ popupsBtns.forEach((btn, btnIndx) => {
       title.src.slice(0, title.src.lastIndexOf("/")) +
       "/" +
       (btnIndx + 1) +
-      ".png";
+      ".svg";
 
     for (let i = 0; i < popupsBtns.length; i++) {
       switch (i) {
         case 0:
           popupsBtns[i].src =
             popupsBtns[i].src.slice(0, popupsBtns[i].src.lastIndexOf("/")) +
-            "/gl.png";
+            "/gl.svg";
           break;
         case 1:
           popupsBtns[i].src =
             popupsBtns[i].src.slice(0, popupsBtns[i].src.lastIndexOf("/")) +
-            "/act.png";
+            "/act.svg";
 
           break;
         case 2:
           popupsBtns[i].src =
             popupsBtns[i].src.slice(0, popupsBtns[i].src.lastIndexOf("/")) +
-            "/tr.png";
+            "/tr.svg";
           break;
         default:
           break;
@@ -72,17 +72,17 @@ popupsBtns.forEach((btn, btnIndx) => {
     exHandler("remove");
     switch (btnIndx) {
       case 0:
-        btn.src = btn.src.slice(0, btn.src.lastIndexOf("/")) + "/gl-sel.png";
+        btn.src = btn.src.slice(0, btn.src.lastIndexOf("/")) + "/gl-sel.svg";
         resetBg("url(./assets/images/gloss/back/b.png)", "106vw");
         glossHandler("init");
         break;
       case 1:
-        btn.src = btn.src.slice(0, btn.src.lastIndexOf("/")) + "/act-sel.png";
+        btn.src = btn.src.slice(0, btn.src.lastIndexOf("/")) + "/act-sel.svg";
         resetBg("url(./assets/images/ex3/b.png)", "228vw");
         exHandler("init");
         break;
       case 2:
-        btn.src = btn.src.slice(0, btn.src.lastIndexOf("/")) + "/tr-sel.png";
+        btn.src = btn.src.slice(0, btn.src.lastIndexOf("/")) + "/tr-sel.svg";
         break;
       default:
         break;
@@ -295,12 +295,11 @@ function exHandler(action) {
                   }
                 }
               }
-
-              console.log(res);
             };
           });
         } else {
           resetBg("url(./assets/images/ex3/b.png)", "228vw");
+
           switch (btnIndx) {
             case 0:
               navImg.src =
