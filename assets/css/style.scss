@@ -14,9 +14,10 @@ body {
     background-size: contain;
     background-position: top center;
     background-repeat: no-repeat;
-    min-width: 100% !important;
+    max-width: 90vw;
     height: 57vw;
     max-height: 100vh;
+    margin: 0 auto;
     display: flex;
     justify-content: center;
     align-items: flex-start;
@@ -34,25 +35,28 @@ body {
 
 .header,
 .bottom {
-    background-size: cover;
+    background-size: contain;
     background-position: top center;
     background-repeat: no-repeat;
-    min-width: 100% !important;
+    width: 100%;
+    max-width: 90vw !important;
     display: none;
     justify-content: flex-start;
     align-items: flex-start;
     padding: 1vw 2vw;
+    margin: 0 auto;
     position: relative;
 }
 
 .header {
-    background-image: url(../images/b/Header\ Bar-8.png);
+    background-image: url(../images/b/Header\ Bar-8.svg);
     height: 33.8vw;
     position: absolute;
     top: 0;
-    left: 0;
+    left: 50%;
     z-index: 1;
     flex-direction: column;
+    transform: translateX(-50%);
 
     .header-icons {
         margin-right: auto;
@@ -79,7 +83,7 @@ body {
             display: flex;
             margin-top: 4vw;
             margin-right: auto;
-            margin-left: 2vw;
+            margin-left: -2.2vw;
         }
 
         .title {
@@ -90,11 +94,11 @@ body {
             height: 3.5vw;
             position: absolute;
             top: 3.5vw;
-            right: 6vw;
+            right: 5.5vw;
         }
 
         .btns img {
-            width: 23vw;
+            width: 22vw;
             cursor: pointer;
 
             &:hover {
@@ -106,7 +110,7 @@ body {
 
 .bottom {
     background-image: url(../images/b/bottom.png);
-    height: 77vw;
+    height: 70vw;
 
     .z-1 {
         z-index: 1;
@@ -134,14 +138,15 @@ body {
         width: 100%;
 
         .content img {
-            width: 80vw;
+            width: 70vw;
+            animation: fade .3s linear;
         }
 
         .btns {
             display: flex;
 
             img {
-                width: 28vw;
+                width: 25vw;
                 cursor: pointer;
             }
         }
@@ -149,10 +154,10 @@ body {
         .navigator {
             position: absolute;
             top: 0;
-            right: 4.5vw;
+            right: 4vw;
 
             img {
-                width: 11vw;
+                width: 9.8vw;
             }
 
             button {
@@ -161,34 +166,36 @@ body {
                 height: 3.4vw;
                 background: transparent;
                 border: none;
-                right: 2vw;
+                right: 1.6vw;
                 cursor: pointer;
             }
 
             .nav1 {
-                top: 3.1vw;
+                top: 2.3vw;
             }
 
             .nav2 {
-                top: 7.4vw;
+                top: 6.3vw;
             }
 
             .nav3 {
-                top: 11.8vw;
+                top: 10.2vw;
             }
 
             .nav4 {
-                top: 16.2vw;
+                top: 14.2vw;
             }
         }
 
         .ex3 {
 
             .overlay {
+                animation: fade .3s linear;
+
                 .box {
                     position: absolute;
-                    left: -42.9vw;
-                    width: 68vw;
+                    left: -38.8vw;
+                    width: 61.5vw;
                 }
 
                 .feedback {
@@ -199,7 +206,7 @@ body {
 
                 h1 {
                     position: absolute;
-                    left: -14.1vw;
+                    left: -13.1vw;
                     font-family: "Tajawal", sans-serif;
                     font-size: 2.5vw;
                     font-weight: 500;
@@ -214,7 +221,6 @@ body {
                 }
 
                 &::after {
-
                     content: "";
                     position: fixed;
                     width: 100%;
@@ -223,6 +229,9 @@ body {
                     left: 0;
                     background: rgba(0, 0, 0, 0.7);
                     z-index: inherit;
+                    animation: fade .3s linear;
+                    transition: all .3s ease-in-out;
+
                 }
             }
 
@@ -235,12 +244,12 @@ body {
                 font-size: 2vw;
                 font-family: "Tajawal", sans-serif;
                 font-weight: 700;
-                padding: 0.8vw 2vw;
+                padding: 0.8vw 1vw;
                 box-shadow: 0 .1vw .2vw .2vw #e1e1e1;
                 cursor: pointer;
                 position: absolute;
-                left: 1.5vw;
-                width: 19vw;
+                left: .5vw;
+                width: 17vw;
 
                 &:hover {
                     background-color: #6ba6c1;
@@ -248,12 +257,12 @@ body {
                 }
             }
 
-            .fb-btn {
+            .fb-btn:not(.retry) {
                 cursor: default !important;
+                box-shadow: none !important;
 
                 &:hover {
                     background-color: #6fafcd !important;
-                    box-shadow: none !important;
                 }
             }
 
@@ -262,7 +271,6 @@ body {
 
                 &:hover {
                     background-color: #714670 !important;
-                    box-shadow: 0 .15vw .2vw .2vw #c3c3c3 !important;
                     cursor: pointer !important;
                 }
             }
@@ -277,8 +285,8 @@ body {
                 text-align: center;
                 border: none;
                 background: transparent;
-                position: absolute;
-                left: -22vw;
+                // position: absolute;
+                // left: -22vw;
             }
 
             div {
@@ -286,6 +294,8 @@ body {
                 div:not(.overlay) {
                     display: flex;
                     flex-direction: column;
+                    position: absolute;
+                    left: -20.2vw;
                 }
             }
 
@@ -293,6 +303,10 @@ body {
                 position: relative;
                 // top: 72.1vw;
                 // left: 25.5vw;
+
+                div {
+                    top: 62vw;
+                }
 
                 .i1 {
                     top: 72.3vw;
@@ -303,12 +317,16 @@ body {
                 }
 
                 button {
-                    top: 75vw;
+                    top: 65vw;
                 }
             }
 
             .g2 {
                 position: relative;
+
+                div {
+                    top: 98vw;
+                }
 
                 .i3 {
                     top: 111.7vw;
@@ -319,12 +337,17 @@ body {
                 }
 
                 button {
-                    top: 114.6vw;
+                    top: 100.6vw;
                 }
             }
 
             .g3 {
                 position: relative;
+
+                div {
+                    top: 147.5vw;
+                    left: -30.9vw !important;
+                }
 
                 .i5 {
                     left: -33.76vw;
@@ -334,14 +357,14 @@ body {
                     left: -29.47vw;
                 }
 
-                button {
-                    top: 166.5vw;
-                    left: -1.5vw;
-                    padding: .3vw .8vw;
+                button:not(.x) {
+                    top: 147.8vw;
+                    left: -1.5vw !important;
+                    padding: 0.5vw 1vw !important;
                 }
 
                 div {
-                    flex-direction: row;
+                    flex-direction: row !important;
                     gap: 1.22vw;
                 }
 
@@ -355,87 +378,99 @@ body {
     }
 }
 
-@mixin breakpoints($point) {
-    @if $point==mobile {
-        @media only screen and (max-width:991px) {
-            @content;
-        }
+// @mixin breakpoints($point) {
+//     @if $point==mobile {
+//         @media only screen and (max-width:991px) {
+//             @content;
+//         }
+//     }
+// }
+
+// .ex3 {
+//     @include breakpoints(mobile) {
+//         .g1 {
+//             .box {
+//                 top: 71vw !important;
+//             }
+
+//             h1 {
+//                 top: 76.7vw !important;
+//             }
+
+//             .i1 {
+//                 top: 73.5vw !important;
+//             }
+
+//             .i2 {
+//                 top: 79.25vw !important;
+//             }
+
+//             input {
+//                 height: initial;
+//             }
+
+//             button:not(.x) {
+//                 top: 76.6vw !important;
+//             }
+//         }
+
+//         .g2 {
+//             .box {
+//                 top: 110.7vw !important;
+//             }
+
+//             h1 {
+//                 top: 116.25vw !important;
+//             }
+
+//             .i3 {
+//                 top: 113.3vw !important;
+//             }
+
+//             .i4 {
+//                 top: 119.2vw !important;
+//             }
+
+//             input {
+//                 height: initial;
+//             }
+
+//             button:not(.x) {
+//                 top: 114.4vw !important;
+//             }
+//         }
+
+//         .g3 {
+//             .box {
+//                 top: 165.6vw !important;
+//             }
+
+//             .i5,
+//             .i6 {
+//                 top: 168.6vw !important;
+//             }
+
+//             input {
+//                 height: initial;
+//             }
+
+//             button:not(.x) {
+//                 top: 168vw !important;
+//                 left: -1.5vw !important;
+//                 padding: .3vw .8vw;
+//             }
+//         }
+//     }
+// }
+
+@keyframes fade {
+    0% {
+        opacity: 0;
     }
-}
 
-.ex3 {
-    @include breakpoints(mobile) {
-        .g1 {
-            .box {
-                top: 71vw !important;
-            }
-
-            h1 {
-                top: 76.7vw !important;
-            }
-
-            .i1 {
-                top: 73.5vw !important;
-            }
-
-            .i2 {
-                top: 79.25vw !important;
-            }
-
-            input {
-                height: initial;
-            }
-
-            button:not(.x) {
-                top: 76.6vw !important;
-            }
-        }
-
-        .g2 {
-            .box {
-                top: 110.7vw !important;
-            }
-
-            h1 {
-                top: 116.25vw !important;
-            }
-
-            .i3 {
-                top: 113.3vw !important;
-            }
-
-            .i4 {
-                top: 119.2vw !important;
-            }
-
-            input {
-                height: initial;
-            }
-
-            button:not(.x) {
-                top: 114.4vw !important;
-            }
-        }
-
-        .g3 {
-            .box {
-                top: 165.6vw !important;
-            }
-
-            .i5,
-            .i6 {
-                top: 168.6vw !important;
-            }
-
-            input {
-                height: initial;
-            }
-
-            button:not(.x) {
-                top: 168vw !important;
-                left: -1.5vw !important;
-                padding: .3vw .8vw;
-            }
-        }
+    50% {
+        opacity: 1;
     }
+
+
 }

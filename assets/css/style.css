@@ -14,9 +14,10 @@ body {
   background-size: contain;
   background-position: top center;
   background-repeat: no-repeat;
-  min-width: 100% !important;
+  max-width: 90vw;
   height: 57vw;
   max-height: 100vh;
+  margin: 0 auto;
   display: flex;
   justify-content: center;
   align-items: flex-start;
@@ -33,25 +34,28 @@ body {
 
 .header,
 .bottom {
-  background-size: cover;
+  background-size: contain;
   background-position: top center;
   background-repeat: no-repeat;
-  min-width: 100% !important;
+  width: 100%;
+  max-width: 90vw !important;
   display: none;
   justify-content: flex-start;
   align-items: flex-start;
   padding: 1vw 2vw;
+  margin: 0 auto;
   position: relative;
 }
 
 .header {
-  background-image: url(../images/b/Header\ Bar-8.png);
+  background-image: url(../images/b/Header\ Bar-8.svg);
   height: 33.8vw;
   position: absolute;
   top: 0;
-  left: 0;
+  left: 50%;
   z-index: 1;
   flex-direction: column;
+  transform: translateX(-50%);
 }
 .header .header-icons {
   margin-right: auto;
@@ -75,7 +79,7 @@ body {
   display: flex;
   margin-top: 4vw;
   margin-right: auto;
-  margin-left: 2vw;
+  margin-left: -2.2vw;
 }
 .header .popups .title {
   position: relative;
@@ -84,10 +88,10 @@ body {
   height: 3.5vw;
   position: absolute;
   top: 3.5vw;
-  right: 6vw;
+  right: 5.5vw;
 }
 .header .popups .btns img {
-  width: 23vw;
+  width: 22vw;
   cursor: pointer;
 }
 .header .popups .btns img:hover {
@@ -96,7 +100,7 @@ body {
 
 .bottom {
   background-image: url(../images/b/bottom.png);
-  height: 77vw;
+  height: 70vw;
 }
 .bottom .z-1 {
   z-index: 1;
@@ -121,7 +125,8 @@ body {
 }
 .bottom .gloss .content img,
 .bottom .ex .content img {
-  width: 80vw;
+  width: 70vw;
+  animation: fade 0.3s linear;
 }
 .bottom .gloss .btns,
 .bottom .ex .btns {
@@ -129,18 +134,18 @@ body {
 }
 .bottom .gloss .btns img,
 .bottom .ex .btns img {
-  width: 28vw;
+  width: 25vw;
   cursor: pointer;
 }
 .bottom .gloss .navigator,
 .bottom .ex .navigator {
   position: absolute;
   top: 0;
-  right: 4.5vw;
+  right: 4vw;
 }
 .bottom .gloss .navigator img,
 .bottom .ex .navigator img {
-  width: 11vw;
+  width: 9.8vw;
 }
 .bottom .gloss .navigator button,
 .bottom .ex .navigator button {
@@ -149,30 +154,34 @@ body {
   height: 3.4vw;
   background: transparent;
   border: none;
-  right: 2vw;
+  right: 1.6vw;
   cursor: pointer;
 }
 .bottom .gloss .navigator .nav1,
 .bottom .ex .navigator .nav1 {
-  top: 3.1vw;
+  top: 2.3vw;
 }
 .bottom .gloss .navigator .nav2,
 .bottom .ex .navigator .nav2 {
-  top: 7.4vw;
+  top: 6.3vw;
 }
 .bottom .gloss .navigator .nav3,
 .bottom .ex .navigator .nav3 {
-  top: 11.8vw;
+  top: 10.2vw;
 }
 .bottom .gloss .navigator .nav4,
 .bottom .ex .navigator .nav4 {
-  top: 16.2vw;
+  top: 14.2vw;
+}
+.bottom .gloss .ex3 .overlay,
+.bottom .ex .ex3 .overlay {
+  animation: fade 0.3s linear;
 }
 .bottom .gloss .ex3 .overlay .box,
 .bottom .ex .ex3 .overlay .box {
   position: absolute;
-  left: -42.9vw;
-  width: 68vw;
+  left: -38.8vw;
+  width: 61.5vw;
 }
 .bottom .gloss .ex3 .overlay .feedback,
 .bottom .ex .ex3 .overlay .feedback {
@@ -183,7 +192,7 @@ body {
 .bottom .gloss .ex3 .overlay h1,
 .bottom .ex .ex3 .overlay h1 {
   position: absolute;
-  left: -14.1vw;
+  left: -13.1vw;
   font-family: "Tajawal", sans-serif;
   font-size: 2.5vw;
   font-weight: 500;
@@ -206,6 +215,8 @@ body {
   left: 0;
   background: rgba(0, 0, 0, 0.7);
   z-index: inherit;
+  animation: fade 0.3s linear;
+  transition: all 0.3s ease-in-out;
 }
 .bottom .gloss .ex3 div:not(.navigator) button,
 .bottom .ex .ex3 div:not(.navigator) button {
@@ -216,26 +227,26 @@ body {
   font-size: 2vw;
   font-family: "Tajawal", sans-serif;
   font-weight: 700;
-  padding: 0.8vw 2vw;
+  padding: 0.8vw 1vw;
   box-shadow: 0 0.1vw 0.2vw 0.2vw #e1e1e1;
   cursor: pointer;
   position: absolute;
-  left: 1.5vw;
-  width: 19vw;
+  left: 0.5vw;
+  width: 17vw;
 }
 .bottom .gloss .ex3 div:not(.navigator) button:hover,
 .bottom .ex .ex3 div:not(.navigator) button:hover {
   background-color: #6ba6c1;
   box-shadow: 0 0.15vw 0.2vw 0.2vw #c3c3c3;
 }
-.bottom .gloss .ex3 .fb-btn,
-.bottom .ex .ex3 .fb-btn {
+.bottom .gloss .ex3 .fb-btn:not(.retry),
+.bottom .ex .ex3 .fb-btn:not(.retry) {
   cursor: default !important;
-}
-.bottom .gloss .ex3 .fb-btn:hover,
-.bottom .ex .ex3 .fb-btn:hover {
-  background-color: #6fafcd !important;
   box-shadow: none !important;
+}
+.bottom .gloss .ex3 .fb-btn:not(.retry):hover,
+.bottom .ex .ex3 .fb-btn:not(.retry):hover {
+  background-color: #6fafcd !important;
 }
 .bottom .gloss .ex3 .retry,
 .bottom .ex .ex3 .retry {
@@ -244,7 +255,6 @@ body {
 .bottom .gloss .ex3 .retry:hover,
 .bottom .ex .ex3 .retry:hover {
   background-color: #714670 !important;
-  box-shadow: 0 0.15vw 0.2vw 0.2vw #c3c3c3 !important;
   cursor: pointer !important;
 }
 .bottom .gloss .ex3 input,
@@ -258,17 +268,21 @@ body {
   text-align: center;
   border: none;
   background: transparent;
-  position: absolute;
-  left: -22vw;
 }
 .bottom .gloss .ex3 div div:not(.overlay),
 .bottom .ex .ex3 div div:not(.overlay) {
   display: flex;
   flex-direction: column;
+  position: absolute;
+  left: -20.2vw;
 }
 .bottom .gloss .ex3 .g1,
 .bottom .ex .ex3 .g1 {
   position: relative;
+}
+.bottom .gloss .ex3 .g1 div,
+.bottom .ex .ex3 .g1 div {
+  top: 62vw;
 }
 .bottom .gloss .ex3 .g1 .i1,
 .bottom .ex .ex3 .g1 .i1 {
@@ -280,11 +294,15 @@ body {
 }
 .bottom .gloss .ex3 .g1 button,
 .bottom .ex .ex3 .g1 button {
-  top: 75vw;
+  top: 65vw;
 }
 .bottom .gloss .ex3 .g2,
 .bottom .ex .ex3 .g2 {
   position: relative;
+}
+.bottom .gloss .ex3 .g2 div,
+.bottom .ex .ex3 .g2 div {
+  top: 98vw;
 }
 .bottom .gloss .ex3 .g2 .i3,
 .bottom .ex .ex3 .g2 .i3 {
@@ -296,11 +314,16 @@ body {
 }
 .bottom .gloss .ex3 .g2 button,
 .bottom .ex .ex3 .g2 button {
-  top: 114.6vw;
+  top: 100.6vw;
 }
 .bottom .gloss .ex3 .g3,
 .bottom .ex .ex3 .g3 {
   position: relative;
+}
+.bottom .gloss .ex3 .g3 div,
+.bottom .ex .ex3 .g3 div {
+  top: 147.5vw;
+  left: -30.9vw !important;
 }
 .bottom .gloss .ex3 .g3 .i5,
 .bottom .ex .ex3 .g3 .i5 {
@@ -310,15 +333,15 @@ body {
 .bottom .ex .ex3 .g3 .i6 {
   left: -29.47vw;
 }
-.bottom .gloss .ex3 .g3 button,
-.bottom .ex .ex3 .g3 button {
-  top: 166.5vw;
-  left: -1.5vw;
-  padding: 0.3vw 0.8vw;
+.bottom .gloss .ex3 .g3 button:not(.x),
+.bottom .ex .ex3 .g3 button:not(.x) {
+  top: 147.8vw;
+  left: -1.5vw !important;
+  padding: 0.5vw 1vw !important;
 }
 .bottom .gloss .ex3 .g3 div,
 .bottom .ex .ex3 .g3 div {
-  flex-direction: row;
+  flex-direction: row !important;
   gap: 1.22vw;
 }
 .bottom .gloss .ex3 .g3 input,
@@ -328,56 +351,11 @@ body {
   top: 166.35vw;
 }
 
-@media only screen and (max-width: 991px) {
-  .ex3 .g1 .box {
-    top: 71vw !important;
+@keyframes fade {
+  0% {
+    opacity: 0;
   }
-  .ex3 .g1 h1 {
-    top: 76.7vw !important;
-  }
-  .ex3 .g1 .i1 {
-    top: 73.5vw !important;
-  }
-  .ex3 .g1 .i2 {
-    top: 79.25vw !important;
-  }
-  .ex3 .g1 input {
-    height: initial;
-  }
-  .ex3 .g1 button:not(.x) {
-    top: 76.6vw !important;
-  }
-  .ex3 .g2 .box {
-    top: 110.7vw !important;
-  }
-  .ex3 .g2 h1 {
-    top: 116.25vw !important;
-  }
-  .ex3 .g2 .i3 {
-    top: 113.3vw !important;
-  }
-  .ex3 .g2 .i4 {
-    top: 119.2vw !important;
-  }
-  .ex3 .g2 input {
-    height: initial;
-  }
-  .ex3 .g2 button:not(.x) {
-    top: 114.4vw !important;
-  }
-  .ex3 .g3 .box {
-    top: 165.6vw !important;
-  }
-  .ex3 .g3 .i5,
-  .ex3 .g3 .i6 {
-    top: 168.6vw !important;
-  }
-  .ex3 .g3 input {
-    height: initial;
-  }
-  .ex3 .g3 button:not(.x) {
-    top: 168vw !important;
-    left: -1.5vw !important;
-    padding: 0.3vw 0.8vw;
+  50% {
+    opacity: 1;
   }
 }/*# sourceMappingURL=style.css.map */
