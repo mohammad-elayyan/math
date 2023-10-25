@@ -137,9 +137,107 @@ body {
         align-items: center;
         width: 100%;
 
-        .content img {
-            width: 70vw;
-            animation: fade .3s linear;
+        .i01 {
+            margin: 2vw 0;
+            width: 21vw;
+            position: relative;
+            right: -14.5vw;
+        }
+
+        .iframe {
+            width: 62vw;
+            height: 50vw;
+            margin-right: auto;
+            margin-left: 5.5vw;
+            border: none;
+        }
+
+        .chk {
+            width: 22vw;
+            position: absolute;
+            top: 159vw;
+            left: 24vw;
+            cursor: pointer;
+        }
+
+
+        .img~.overlay {
+            .fb-btn {
+                top: 43.5vw;
+                left: 22.5vw;
+            }
+        }
+
+        video {
+            width: 64vw;
+            margin-right: 13vw;
+            margin-top: 1vw;
+            border: 0.6vw solid #6fafcd;
+            border-radius: 0.3vw;
+        }
+
+        .img {
+            position: absolute;
+            top: 0;
+            right: 18vw;
+
+            div {
+                display: flex;
+                gap: 1vw;
+                align-items: center;
+                margin-top: 1vw;
+
+                h2 {
+                    font-family: "Tajawal", sans-serif;
+                    font-size: 1.9vw;
+                    font-weight: 500;
+                }
+
+                input {
+                    width: 6.5vw;
+                    outline: none;
+                    font-size: 2.5vw;
+                    font-family: "Tajawal", sans-serif;
+                    font-weight: 500;
+                    text-align: center;
+                    border: 2px solid #8ab5cb;
+                    border-radius: 6px;
+                }
+
+
+            }
+
+            h1 {
+                font-size: 2.4vw;
+                font-family: "Tajawal", sans-serif;
+            }
+
+            img {
+                width: 35vw;
+                margin: 2vw auto;
+                margin-right: 11vw;
+            }
+        }
+
+        .content {
+            position: relative;
+
+            img {
+                &:first-of-type {
+
+                    width: 70vw;
+                    animation: fade .3s linear;
+                }
+
+                &:last-of-type {
+
+                    position: absolute;
+                    left: 0vw;
+                    bottom: 1vw;
+                    width: 34vw;
+                    animation: fade .3s linear;
+                }
+            }
         }
 
         .btns {
@@ -183,78 +281,99 @@ body {
             }
 
             .nav4 {
-                top: 14.2vw;
+                top: 13.9vw;
+            }
+
+            .nav5 {
+                top: 17.6vw;
+            }
+
+            .nav6 {
+                top: 21.4vw;
+            }
+
+            .nav7 {
+                top: 25.1vw;
+            }
+
+            .nav8 {
+                top: 28.8vw;
+            }
+
+            .nav9 {
+                top: 32.5vw;
+            }
+
+            .nav10 {
+                top: 36.2vw;
             }
         }
 
-        .ex3 {
+        div:not(.navigator) button {
+            // margin-left: 16vw;
+            background-color: #6fafcd;
+            border-radius: 6px;
+            border: none;
+            color: #fff;
+            font-size: 2vw;
+            font-family: "Tajawal", sans-serif;
+            font-weight: 700;
+            padding: 0.8vw 1vw;
+            box-shadow: 0 .1vw .2vw .2vw #e1e1e1;
+            cursor: pointer;
+            position: absolute;
+            left: .5vw;
+            width: 17vw;
 
-            .overlay {
-                animation: fade .3s linear;
+            &:hover {
+                background-color: #6ba6c1;
+                box-shadow: 0 .15vw .2vw .2vw #c3c3c3;
+            }
+        }
 
-                .box {
-                    position: absolute;
-                    left: -38.8vw;
-                    width: 61.5vw;
-                }
+        .overlay {
+            animation: fade .3s linear;
 
-                .feedback {
-                    position: absolute;
-                    width: 26vw;
-                    left: -3vw;
-                }
-
-                h1 {
-                    position: absolute;
-                    left: -13.1vw;
-                    font-family: "Tajawal", sans-serif;
-                    font-size: 2.5vw;
-                    font-weight: 500;
-                }
-
-                .x {
-                    left: -1.6vw;
-                    width: 1vw;
-                    padding: 1.5vw;
-                    background: transparent !important;
-                    box-shadow: none !important;
-                }
-
-                &::after {
-                    content: "";
-                    position: fixed;
-                    width: 100%;
-                    height: 100vh;
-                    top: 0;
-                    left: 0;
-                    background: rgba(0, 0, 0, 0.7);
-                    z-index: inherit;
-                    animation: fade .3s linear;
-                    transition: all .3s ease-in-out;
-
-                }
+            .box {
+                position: absolute;
+                left: -38.8vw;
+                width: 61.5vw;
             }
 
-            div:not(.navigator) button {
-                // margin-left: 16vw;
-                background-color: #6fafcd;
-                border-radius: 6px;
-                border: none;
-                color: #fff;
-                font-size: 2vw;
-                font-family: "Tajawal", sans-serif;
-                font-weight: 700;
-                padding: 0.8vw 1vw;
-                box-shadow: 0 .1vw .2vw .2vw #e1e1e1;
-                cursor: pointer;
+            .feedback {
                 position: absolute;
-                left: .5vw;
-                width: 17vw;
+                width: 26vw;
+                left: -3vw;
+            }
 
-                &:hover {
-                    background-color: #6ba6c1;
-                    box-shadow: 0 .15vw .2vw .2vw #c3c3c3;
-                }
+            h1 {
+                position: absolute;
+                left: -13.1vw;
+                font-family: "Tajawal", sans-serif;
+                font-size: 2.5vw;
+                font-weight: 500;
+            }
+
+            .x {
+                left: -1.6vw;
+                width: 1vw;
+                padding: 1.5vw;
+                background: transparent !important;
+                box-shadow: none !important;
+            }
+
+            &::after {
+                content: "";
+                position: fixed;
+                width: 100%;
+                height: 100vh;
+                top: 0;
+                left: 0;
+                background: rgba(0, 0, 0, 0.7);
+                z-index: inherit;
+                animation: fade .3s linear;
+                transition: all .3s ease-in-out;
+
             }
 
             .fb-btn:not(.retry) {
@@ -274,20 +393,24 @@ body {
                     cursor: pointer !important;
                 }
             }
+        }
 
-            input {
-                width: 3.8vw;
-                height: 4.9vw;
-                outline: none;
-                font-size: 2.5vw;
-                font-family: "Tajawal", sans-serif;
-                font-weight: 500;
-                text-align: center;
-                border: none;
-                background: transparent;
-                // position: absolute;
-                // left: -22vw;
-            }
+
+        input {
+            width: 3.8vw;
+            height: 4.9vw;
+            outline: none;
+            font-size: 2.5vw;
+            font-family: "Tajawal", sans-serif;
+            font-weight: 500;
+            text-align: center;
+            border: none;
+            background: transparent;
+            // position: absolute;
+            // left: -22vw;
+        }
+
+        .ex3 {
 
             div {
 
@@ -374,9 +497,210 @@ body {
                     top: 166.35vw;
                 }
             }
+
+            .g4 {
+                position: relative;
+                top: 190vw;
+
+                div {
+                    top: -9vw;
+                    left: 4.5vw !important;
+                }
+
+                .i7 {
+                    position: absolute;
+                    // top: 121.7vw;
+                    border: 1px solid #6fafcd;
+                    height: 3.3vw;
+                    right: -5.4vw;
+                }
+
+                .i8,
+                .i9 {
+                    position: absolute;
+                    top: 3.9vw;
+                    border: 1px solid #6fafcd;
+                    height: 3.3vw;
+                    right: -1.4vw;
+                }
+
+                .i9 {
+                    right: -5.4vw;
+                }
+
+                button {
+
+                    left: -9.5vw;
+                    width: 11vw;
+                    font-size: 1.2vw;
+
+                    // top: 110.6vw;
+                    &:first-of-type {
+                        top: -9.1vw;
+                    }
+
+                    &:last-of-type {
+                        top: -5.1vw;
+                    }
+                }
+            }
         }
+
+        .ex4 {
+            position: relative;
+            top: 9vw;
+            right: 7vw;
+            width: 64vw;
+
+            img {
+                width: 21.5vw;
+            }
+
+            .q {
+                display: flex;
+                align-items: flex-start;
+
+                img {
+                    position: absolute;
+                    top: -1vw;
+                    left: 0;
+                    width: 23.5vw !important;
+                }
+            }
+
+            h2 {
+                width: 63.5%;
+                font-family: "Tajawal", sans-serif;
+                font-size: 1.9vw;
+                font-weight: 500;
+            }
+
+            input {
+                position: absolute;
+                top: 15vw;
+                border: 1px solid #6fafcd;
+                height: 4.3vw;
+                width: 6vw;
+            }
+
+            button {
+                top: 15vw;
+                right: 11vw;
+            }
+        }
+
+        .exr10 {
+            top: 3vw !important;
+
+
+            h2 {
+                width: initial !important;
+            }
+
+            button {
+                top: 8.5vw;
+                right: 40vw;
+            }
+
+            .q {
+                position: absolute;
+
+                textarea {
+                    font-size: 1.3vw;
+                    font-family: "Tajawal", sans-serif;
+                    border: 0.2vw solid #6ba6c1;
+                    width: 39vw;
+                }
+
+                button {
+                    width: 14vw;
+                    font-size: 1.6vw;
+                }
+
+                &:nth-of-type(1) {
+                    top: 0vw;
+
+                    input {
+                        right: 22.5vw;
+                        top: 15.2vw;
+
+                        &:nth-of-type(1) {
+                            top: 10.2vw;
+                        }
+
+                        &:nth-of-type(3) {
+                            right: 29.2vw !important;
+                        }
+                    }
+
+                    button {
+
+                        right: 38vw;
+
+                        &:nth-of-type(1) {
+                            top: 10.2vw;
+                        }
+
+                        &:nth-of-type(2) {
+                            top: 15.5vw;
+                        }
+
+                    }
+                }
+
+                &:nth-of-type(2) {
+                    top: 23vw;
+
+                    .g4 {
+                        position: absolute;
+                        top: 9vw;
+                    }
+                }
+
+                &:nth-of-type(3) {
+                    top: 48vw;
+
+                    .g4 {
+                        position: absolute;
+                        top: 4vw;
+                    }
+                }
+
+
+            }
+
+        }
+
+        .exr8~.ex4 {
+            top: 30vw;
+
+            .g2 {
+                position: absolute;
+                top: 5vw;
+                left: 56vw;
+
+
+                button {
+                    height: 4vw;
+                    font-size: 1.8vw;
+                }
+
+                input {
+                    height: 3.5vw;
+                }
+            }
+        }
+
+        .exr8 {
+
+            .g4 {
+                top: 22vw;
+            }
+        }
+
     }
 }
+
 
 // @mixin breakpoints($point) {
 //     @if $point==mobile {
@@ -471,6 +795,4 @@ body {
     50% {
         opacity: 1;
     }
-
-
 }

@@ -123,9 +123,98 @@ body {
   align-items: center;
   width: 100%;
 }
-.bottom .gloss .content img,
-.bottom .ex .content img {
+.bottom .gloss .i01,
+.bottom .ex .i01 {
+  margin: 2vw 0;
+  width: 21vw;
+  position: relative;
+  right: -14.5vw;
+}
+.bottom .gloss .iframe,
+.bottom .ex .iframe {
+  width: 62vw;
+  height: 50vw;
+  margin-right: auto;
+  margin-left: 5.5vw;
+  border: none;
+}
+.bottom .gloss .chk,
+.bottom .ex .chk {
+  width: 22vw;
+  position: absolute;
+  top: 159vw;
+  left: 24vw;
+  cursor: pointer;
+}
+.bottom .gloss .img ~ .overlay .fb-btn,
+.bottom .ex .img ~ .overlay .fb-btn {
+  top: 43.5vw;
+  left: 22.5vw;
+}
+.bottom .gloss video,
+.bottom .ex video {
+  width: 64vw;
+  margin-right: 13vw;
+  margin-top: 1vw;
+  border: 0.6vw solid #6fafcd;
+  border-radius: 0.3vw;
+}
+.bottom .gloss .img,
+.bottom .ex .img {
+  position: absolute;
+  top: 0;
+  right: 18vw;
+}
+.bottom .gloss .img div,
+.bottom .ex .img div {
+  display: flex;
+  gap: 1vw;
+  align-items: center;
+  margin-top: 1vw;
+}
+.bottom .gloss .img div h2,
+.bottom .ex .img div h2 {
+  font-family: "Tajawal", sans-serif;
+  font-size: 1.9vw;
+  font-weight: 500;
+}
+.bottom .gloss .img div input,
+.bottom .ex .img div input {
+  width: 6.5vw;
+  outline: none;
+  font-size: 2.5vw;
+  font-family: "Tajawal", sans-serif;
+  font-weight: 500;
+  text-align: center;
+  border: 2px solid #8ab5cb;
+  border-radius: 6px;
+}
+.bottom .gloss .img h1,
+.bottom .ex .img h1 {
+  font-size: 2.4vw;
+  font-family: "Tajawal", sans-serif;
+}
+.bottom .gloss .img img,
+.bottom .ex .img img {
+  width: 35vw;
+  margin: 2vw auto;
+  margin-right: 11vw;
+}
+.bottom .gloss .content,
+.bottom .ex .content {
+  position: relative;
+}
+.bottom .gloss .content img:first-of-type,
+.bottom .ex .content img:first-of-type {
   width: 70vw;
+  animation: fade 0.3s linear;
+}
+.bottom .gloss .content img:last-of-type,
+.bottom .ex .content img:last-of-type {
+  position: absolute;
+  left: 0vw;
+  bottom: 1vw;
+  width: 34vw;
   animation: fade 0.3s linear;
 }
 .bottom .gloss .btns,
@@ -171,55 +260,34 @@ body {
 }
 .bottom .gloss .navigator .nav4,
 .bottom .ex .navigator .nav4 {
-  top: 14.2vw;
+  top: 13.9vw;
 }
-.bottom .gloss .ex3 .overlay,
-.bottom .ex .ex3 .overlay {
-  animation: fade 0.3s linear;
+.bottom .gloss .navigator .nav5,
+.bottom .ex .navigator .nav5 {
+  top: 17.6vw;
 }
-.bottom .gloss .ex3 .overlay .box,
-.bottom .ex .ex3 .overlay .box {
-  position: absolute;
-  left: -38.8vw;
-  width: 61.5vw;
+.bottom .gloss .navigator .nav6,
+.bottom .ex .navigator .nav6 {
+  top: 21.4vw;
 }
-.bottom .gloss .ex3 .overlay .feedback,
-.bottom .ex .ex3 .overlay .feedback {
-  position: absolute;
-  width: 26vw;
-  left: -3vw;
+.bottom .gloss .navigator .nav7,
+.bottom .ex .navigator .nav7 {
+  top: 25.1vw;
 }
-.bottom .gloss .ex3 .overlay h1,
-.bottom .ex .ex3 .overlay h1 {
-  position: absolute;
-  left: -13.1vw;
-  font-family: "Tajawal", sans-serif;
-  font-size: 2.5vw;
-  font-weight: 500;
+.bottom .gloss .navigator .nav8,
+.bottom .ex .navigator .nav8 {
+  top: 28.8vw;
 }
-.bottom .gloss .ex3 .overlay .x,
-.bottom .ex .ex3 .overlay .x {
-  left: -1.6vw;
-  width: 1vw;
-  padding: 1.5vw;
-  background: transparent !important;
-  box-shadow: none !important;
+.bottom .gloss .navigator .nav9,
+.bottom .ex .navigator .nav9 {
+  top: 32.5vw;
 }
-.bottom .gloss .ex3 .overlay::after,
-.bottom .ex .ex3 .overlay::after {
-  content: "";
-  position: fixed;
-  width: 100%;
-  height: 100vh;
-  top: 0;
-  left: 0;
-  background: rgba(0, 0, 0, 0.7);
-  z-index: inherit;
-  animation: fade 0.3s linear;
-  transition: all 0.3s ease-in-out;
+.bottom .gloss .navigator .nav10,
+.bottom .ex .navigator .nav10 {
+  top: 36.2vw;
 }
-.bottom .gloss .ex3 div:not(.navigator) button,
-.bottom .ex .ex3 div:not(.navigator) button {
+.bottom .gloss div:not(.navigator) button,
+.bottom .ex div:not(.navigator) button {
   background-color: #6fafcd;
   border-radius: 6px;
   border: none;
@@ -234,31 +302,76 @@ body {
   left: 0.5vw;
   width: 17vw;
 }
-.bottom .gloss .ex3 div:not(.navigator) button:hover,
-.bottom .ex .ex3 div:not(.navigator) button:hover {
+.bottom .gloss div:not(.navigator) button:hover,
+.bottom .ex div:not(.navigator) button:hover {
   background-color: #6ba6c1;
   box-shadow: 0 0.15vw 0.2vw 0.2vw #c3c3c3;
 }
-.bottom .gloss .ex3 .fb-btn:not(.retry),
-.bottom .ex .ex3 .fb-btn:not(.retry) {
+.bottom .gloss .overlay,
+.bottom .ex .overlay {
+  animation: fade 0.3s linear;
+}
+.bottom .gloss .overlay .box,
+.bottom .ex .overlay .box {
+  position: absolute;
+  left: -38.8vw;
+  width: 61.5vw;
+}
+.bottom .gloss .overlay .feedback,
+.bottom .ex .overlay .feedback {
+  position: absolute;
+  width: 26vw;
+  left: -3vw;
+}
+.bottom .gloss .overlay h1,
+.bottom .ex .overlay h1 {
+  position: absolute;
+  left: -13.1vw;
+  font-family: "Tajawal", sans-serif;
+  font-size: 2.5vw;
+  font-weight: 500;
+}
+.bottom .gloss .overlay .x,
+.bottom .ex .overlay .x {
+  left: -1.6vw;
+  width: 1vw;
+  padding: 1.5vw;
+  background: transparent !important;
+  box-shadow: none !important;
+}
+.bottom .gloss .overlay::after,
+.bottom .ex .overlay::after {
+  content: "";
+  position: fixed;
+  width: 100%;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.7);
+  z-index: inherit;
+  animation: fade 0.3s linear;
+  transition: all 0.3s ease-in-out;
+}
+.bottom .gloss .overlay .fb-btn:not(.retry),
+.bottom .ex .overlay .fb-btn:not(.retry) {
   cursor: default !important;
   box-shadow: none !important;
 }
-.bottom .gloss .ex3 .fb-btn:not(.retry):hover,
-.bottom .ex .ex3 .fb-btn:not(.retry):hover {
+.bottom .gloss .overlay .fb-btn:not(.retry):hover,
+.bottom .ex .overlay .fb-btn:not(.retry):hover {
   background-color: #6fafcd !important;
 }
-.bottom .gloss .ex3 .retry,
-.bottom .ex .ex3 .retry {
+.bottom .gloss .overlay .retry,
+.bottom .ex .overlay .retry {
   background-color: #7e4d7c !important;
 }
-.bottom .gloss .ex3 .retry:hover,
-.bottom .ex .ex3 .retry:hover {
+.bottom .gloss .overlay .retry:hover,
+.bottom .ex .overlay .retry:hover {
   background-color: #714670 !important;
   cursor: pointer !important;
 }
-.bottom .gloss .ex3 input,
-.bottom .ex .ex3 input {
+.bottom .gloss input,
+.bottom .ex input {
   width: 3.8vw;
   height: 4.9vw;
   outline: none;
@@ -349,6 +462,193 @@ body {
   width: 2.7vw;
   height: 4.8vw;
   top: 166.35vw;
+}
+.bottom .gloss .ex3 .g4,
+.bottom .ex .ex3 .g4 {
+  position: relative;
+  top: 190vw;
+}
+.bottom .gloss .ex3 .g4 div,
+.bottom .ex .ex3 .g4 div {
+  top: -9vw;
+  left: 4.5vw !important;
+}
+.bottom .gloss .ex3 .g4 .i7,
+.bottom .ex .ex3 .g4 .i7 {
+  position: absolute;
+  border: 1px solid #6fafcd;
+  height: 3.3vw;
+  right: -5.4vw;
+}
+.bottom .gloss .ex3 .g4 .i8,
+.bottom .gloss .ex3 .g4 .i9,
+.bottom .ex .ex3 .g4 .i8,
+.bottom .ex .ex3 .g4 .i9 {
+  position: absolute;
+  top: 3.9vw;
+  border: 1px solid #6fafcd;
+  height: 3.3vw;
+  right: -1.4vw;
+}
+.bottom .gloss .ex3 .g4 .i9,
+.bottom .ex .ex3 .g4 .i9 {
+  right: -5.4vw;
+}
+.bottom .gloss .ex3 .g4 button,
+.bottom .ex .ex3 .g4 button {
+  left: -9.5vw;
+  width: 11vw;
+  font-size: 1.2vw;
+}
+.bottom .gloss .ex3 .g4 button:first-of-type,
+.bottom .ex .ex3 .g4 button:first-of-type {
+  top: -9.1vw;
+}
+.bottom .gloss .ex3 .g4 button:last-of-type,
+.bottom .ex .ex3 .g4 button:last-of-type {
+  top: -5.1vw;
+}
+.bottom .gloss .ex4,
+.bottom .ex .ex4 {
+  position: relative;
+  top: 9vw;
+  right: 7vw;
+  width: 64vw;
+}
+.bottom .gloss .ex4 img,
+.bottom .ex .ex4 img {
+  width: 21.5vw;
+}
+.bottom .gloss .ex4 .q,
+.bottom .ex .ex4 .q {
+  display: flex;
+  align-items: flex-start;
+}
+.bottom .gloss .ex4 .q img,
+.bottom .ex .ex4 .q img {
+  position: absolute;
+  top: -1vw;
+  left: 0;
+  width: 23.5vw !important;
+}
+.bottom .gloss .ex4 h2,
+.bottom .ex .ex4 h2 {
+  width: 63.5%;
+  font-family: "Tajawal", sans-serif;
+  font-size: 1.9vw;
+  font-weight: 500;
+}
+.bottom .gloss .ex4 input,
+.bottom .ex .ex4 input {
+  position: absolute;
+  top: 15vw;
+  border: 1px solid #6fafcd;
+  height: 4.3vw;
+  width: 6vw;
+}
+.bottom .gloss .ex4 button,
+.bottom .ex .ex4 button {
+  top: 15vw;
+  right: 11vw;
+}
+.bottom .gloss .exr10,
+.bottom .ex .exr10 {
+  top: 3vw !important;
+}
+.bottom .gloss .exr10 h2,
+.bottom .ex .exr10 h2 {
+  width: initial !important;
+}
+.bottom .gloss .exr10 button,
+.bottom .ex .exr10 button {
+  top: 8.5vw;
+  right: 40vw;
+}
+.bottom .gloss .exr10 .q,
+.bottom .ex .exr10 .q {
+  position: absolute;
+}
+.bottom .gloss .exr10 .q textarea,
+.bottom .ex .exr10 .q textarea {
+  font-size: 1.3vw;
+  font-family: "Tajawal", sans-serif;
+  border: 0.2vw solid #6ba6c1;
+  width: 39vw;
+}
+.bottom .gloss .exr10 .q button,
+.bottom .ex .exr10 .q button {
+  width: 14vw;
+  font-size: 1.6vw;
+}
+.bottom .gloss .exr10 .q:nth-of-type(1),
+.bottom .ex .exr10 .q:nth-of-type(1) {
+  top: 0vw;
+}
+.bottom .gloss .exr10 .q:nth-of-type(1) input,
+.bottom .ex .exr10 .q:nth-of-type(1) input {
+  right: 22.5vw;
+  top: 15.2vw;
+}
+.bottom .gloss .exr10 .q:nth-of-type(1) input:nth-of-type(1),
+.bottom .ex .exr10 .q:nth-of-type(1) input:nth-of-type(1) {
+  top: 10.2vw;
+}
+.bottom .gloss .exr10 .q:nth-of-type(1) input:nth-of-type(3),
+.bottom .ex .exr10 .q:nth-of-type(1) input:nth-of-type(3) {
+  right: 29.2vw !important;
+}
+.bottom .gloss .exr10 .q:nth-of-type(1) button,
+.bottom .ex .exr10 .q:nth-of-type(1) button {
+  right: 38vw;
+}
+.bottom .gloss .exr10 .q:nth-of-type(1) button:nth-of-type(1),
+.bottom .ex .exr10 .q:nth-of-type(1) button:nth-of-type(1) {
+  top: 10.2vw;
+}
+.bottom .gloss .exr10 .q:nth-of-type(1) button:nth-of-type(2),
+.bottom .ex .exr10 .q:nth-of-type(1) button:nth-of-type(2) {
+  top: 15.5vw;
+}
+.bottom .gloss .exr10 .q:nth-of-type(2),
+.bottom .ex .exr10 .q:nth-of-type(2) {
+  top: 23vw;
+}
+.bottom .gloss .exr10 .q:nth-of-type(2) .g4,
+.bottom .ex .exr10 .q:nth-of-type(2) .g4 {
+  position: absolute;
+  top: 9vw;
+}
+.bottom .gloss .exr10 .q:nth-of-type(3),
+.bottom .ex .exr10 .q:nth-of-type(3) {
+  top: 48vw;
+}
+.bottom .gloss .exr10 .q:nth-of-type(3) .g4,
+.bottom .ex .exr10 .q:nth-of-type(3) .g4 {
+  position: absolute;
+  top: 4vw;
+}
+.bottom .gloss .exr8 ~ .ex4,
+.bottom .ex .exr8 ~ .ex4 {
+  top: 30vw;
+}
+.bottom .gloss .exr8 ~ .ex4 .g2,
+.bottom .ex .exr8 ~ .ex4 .g2 {
+  position: absolute;
+  top: 5vw;
+  left: 56vw;
+}
+.bottom .gloss .exr8 ~ .ex4 .g2 button,
+.bottom .ex .exr8 ~ .ex4 .g2 button {
+  height: 4vw;
+  font-size: 1.8vw;
+}
+.bottom .gloss .exr8 ~ .ex4 .g2 input,
+.bottom .ex .exr8 ~ .ex4 .g2 input {
+  height: 3.5vw;
+}
+.bottom .gloss .exr8 .g4,
+.bottom .ex .exr8 .g4 {
+  top: 22vw;
 }
 
 @keyframes fade {
