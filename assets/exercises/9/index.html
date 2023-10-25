@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enlargement Math</title>
+    <link rel="stylesheet" href="style.css"></style>
+</head>
+
+<body>
+    <img src="undo-icon.svg" id="undo" style="bottom: 5.8vw;">
+    <img src="chk.svg" id="chkBtn" class="svg_btn">
+    <div class="overlay"></div>
+    <div class="confirm">
+        <div>
+
+            <p style="direction: rtl;">المسافة التي تم قياسها كانت:</p>
+        </div>
+        <div style="display: block;">
+            <input type="radio" name="d-measures">
+            <label for="child">OA</label>
+            <input type="radio" name="d-measures">
+            <label for="child">OB</label>
+            <input type="radio" name="d-measures">
+            <label for="child">OC</label>
+            <input type="radio" name="d-measures">
+            <label for="child">OD</label>
+            <input type="radio" name="d-measures">
+            <label for="child">OE</label>
+            <input type="radio" name="d-measures">
+            <label for="child">OF</label>
+            <input type="radio" name="d-measures">
+            <label for="child">OG</label>
+        </div>
+
+        <div class="confirm-btn-list"> 
+            <button id="ok_d">موافق</button>
+            <button id="cancel_d">إلغاء</button>
+        </div>
+    </div>
+
+    <div id="board">
+        <canvas id="myc"></canvas>
+
+    </div>
+
+    <div class="header">
+        <div class="saved-distances">
+            <img src="q1.svg" style="width: 35vw;">
+            <div class="measures"></div>
+        </div>
+        <div class="select">
+            <p for="">نوع الاستخدام</p>
+            <select id="measureOrDraw">
+                <option value="na">اختر ...</option>
+                <option value="measure">قياس</option>
+                <option value="draw-line">خط</option>
+                <option value="draw-shape">شكل</option>
+
+                
+            </select>
+        </div>
+    </div>
+
+    <script src="js.js"></script>
+
+</body>
+
+</html>

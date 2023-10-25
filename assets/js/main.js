@@ -446,7 +446,7 @@ function exrsHandler(action) {
         ex.append(iframe);
       }
       btn.onclick = () => {
-        document.querySelector(".iframe").remove();
+        document.querySelector(".iframe")?.remove();
         navImg.src =
           navImg.src.slice(0, navImg.src.lastIndexOf("/")) +
           "/" +
