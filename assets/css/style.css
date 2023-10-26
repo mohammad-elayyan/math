@@ -378,8 +378,18 @@ body {
   font-family: "Tajawal", sans-serif;
   font-weight: 500;
   text-align: center;
-  border: none;
+  border: 0.2vw solid #6fafcd;
   background: transparent;
+}
+.bottom .gloss .line::after,
+.bottom .ex .line::after {
+  content: "";
+  background-color: #6fafcd;
+  width: 5vw;
+  height: 0.25vw;
+  position: absolute;
+  left: -0.6vw;
+  top: 4.5vw;
 }
 .bottom .gloss .ex3 div div:not(.overlay),
 .bottom .ex .ex3 div div:not(.overlay) {
@@ -435,7 +445,7 @@ body {
 }
 .bottom .gloss .ex3 .g3 div,
 .bottom .ex .ex3 .g3 div {
-  top: 147.5vw;
+  top: 147.9vw;
   left: -30.9vw !important;
 }
 .bottom .gloss .ex3 .g3 .i5,
@@ -455,11 +465,12 @@ body {
 .bottom .gloss .ex3 .g3 div,
 .bottom .ex .ex3 .g3 div {
   flex-direction: row !important;
-  gap: 1.22vw;
+  gap: 1.1vw !important;
 }
 .bottom .gloss .ex3 .g3 input,
 .bottom .ex .ex3 .g3 input {
-  width: 2.7vw;
+  width: 3vw;
+  height: 3.2vw;
   margin-top: 0.5vw;
 }
 .bottom .gloss .ex3 .g4,
