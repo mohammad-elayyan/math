@@ -315,7 +315,7 @@ body {
             border-radius: 6px;
             border: none;
             color: #fff;
-            font-size: 2vw;
+            font-size: 1.7vw;
             font-family: "Tajawal", sans-serif;
             font-weight: 700;
             padding: 0.8vw 1vw;
@@ -323,7 +323,7 @@ body {
             cursor: pointer;
             position: absolute;
             left: .5vw;
-            width: 17vw;
+            width: 15vw;
 
             &:hover {
                 background-color: #6ba6c1;
@@ -398,7 +398,7 @@ body {
 
         input {
             width: 3.8vw;
-            height: 4.9vw;
+            // height: 4.9vw;
             outline: none;
             font-size: 2.5vw;
             font-family: "Tajawal", sans-serif;
@@ -419,6 +419,7 @@ body {
                     flex-direction: column;
                     position: absolute;
                     left: -20.2vw;
+                    gap: 1.5vw;
                 }
             }
 
@@ -428,7 +429,7 @@ body {
                 // left: 25.5vw;
 
                 div {
-                    top: 62vw;
+                    top: 62.6vw;
                 }
 
                 .i1 {
@@ -448,7 +449,7 @@ body {
                 position: relative;
 
                 div {
-                    top: 98vw;
+                    top: 98.5vw;
                 }
 
                 .i3 {
@@ -493,8 +494,8 @@ body {
 
                 input {
                     width: 2.7vw;
-                    height: 4.8vw;
-                    top: 166.35vw;
+                    // height: 4.8vw;
+                    margin-top: 0.5vw;
                 }
             }
 

@@ -292,7 +292,7 @@ body {
   border-radius: 6px;
   border: none;
   color: #fff;
-  font-size: 2vw;
+  font-size: 1.7vw;
   font-family: "Tajawal", sans-serif;
   font-weight: 700;
   padding: 0.8vw 1vw;
@@ -300,7 +300,7 @@ body {
   cursor: pointer;
   position: absolute;
   left: 0.5vw;
-  width: 17vw;
+  width: 15vw;
 }
 .bottom .gloss div:not(.navigator) button:hover,
 .bottom .ex div:not(.navigator) button:hover {
@@ -373,7 +373,6 @@ body {
 .bottom .gloss input,
 .bottom .ex input {
   width: 3.8vw;
-  height: 4.9vw;
   outline: none;
   font-size: 2.5vw;
   font-family: "Tajawal", sans-serif;
@@ -388,6 +387,7 @@ body {
   flex-direction: column;
   position: absolute;
   left: -20.2vw;
+  gap: 1.5vw;
 }
 .bottom .gloss .ex3 .g1,
 .bottom .ex .ex3 .g1 {
@@ -395,7 +395,7 @@ body {
 }
 .bottom .gloss .ex3 .g1 div,
 .bottom .ex .ex3 .g1 div {
-  top: 62vw;
+  top: 62.6vw;
 }
 .bottom .gloss .ex3 .g1 .i1,
 .bottom .ex .ex3 .g1 .i1 {
@@ -415,7 +415,7 @@ body {
 }
 .bottom .gloss .ex3 .g2 div,
 .bottom .ex .ex3 .g2 div {
-  top: 98vw;
+  top: 98.5vw;
 }
 .bottom .gloss .ex3 .g2 .i3,
 .bottom .ex .ex3 .g2 .i3 {
@@ -460,8 +460,7 @@ body {
 .bottom .gloss .ex3 .g3 input,
 .bottom .ex .ex3 .g3 input {
   width: 2.7vw;
-  height: 4.8vw;
-  top: 166.35vw;
+  margin-top: 0.5vw;
 }
 .bottom .gloss .ex3 .g4,
 .bottom .ex .ex3 .g4 {

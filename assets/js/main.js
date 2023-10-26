@@ -396,12 +396,16 @@ function exHandler(action) {
               const inp = document.querySelector("input");
 
               chkBtn.onclick = () => {
-                let res = inputCheck(inp.value, "", 0.25, "");
-                if (res) {
-                  inp.style.color = "#3dd15d";
-                  inp.setAttribute("readonly", "true");
+                if (inp.value != "" && !isNaN(inp.value)) {
+                  let res = inputCheck(inp.value, "", 0.25, "");
+                  if (res) {
+                    inp.style.color = "#3dd15d";
+                    inp.setAttribute("readonly", "true");
+                  } else {
+                    inp.style.color = "#dc767c";
+                  }
                 } else {
-                  inp.style.color = "#dc767c";
+                  alert("يرجى ادخال قيمة صحيحة");
                 }
               };
               break;
