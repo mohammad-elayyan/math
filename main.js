@@ -167,7 +167,7 @@ function exHandler(action) {
         img.src = `./assets/images/chkBtn.svg`;
         img.className = "i01";
         ex.append(img);
-        iframe.src = `https://www.geogebra.org/geometry/bq4pe8xw?embed`;
+        iframe.src = `./assets/exercises/v${btnIndx + 1}/index.html`;
         ex.append(iframe);
       }
       btn.onclick = () => {
