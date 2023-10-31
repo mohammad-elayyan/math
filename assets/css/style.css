@@ -10,7 +10,7 @@ body {
 }
 
 .s1 {
-  background-image: url(../images/start/start.png);
+  background-image: url(../images/start/start.webp);
   background-size: contain;
   background-position: top center;
   background-repeat: no-repeat;
@@ -30,6 +30,19 @@ body {
   position: absolute;
   bottom: 1.45vw;
   cursor: pointer;
+}
+
+.footer {
+  background-image: url(../images/b/footer.svg);
+  background-size: contain;
+  height: 6.4vw;
+  background-repeat: no-repeat;
+  width: 100%;
+  max-width: 90vw !important;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  display: none;
 }
 
 .header,
@@ -99,7 +112,7 @@ body {
 }
 
 .bottom {
-  background-image: url(../images/b/bottom.png);
+  background-image: url(../images/b/b.webp);
   height: 70vw;
 }
 .bottom .z-1 {
@@ -115,6 +128,7 @@ body {
   z-index: 4;
 }
 .bottom .gloss,
+.bottom .instruction,
 .bottom .ex {
   position: relative;
   top: 34vw;
@@ -124,6 +138,7 @@ body {
   width: 100%;
 }
 .bottom .gloss .i01,
+.bottom .instruction .i01,
 .bottom .ex .i01 {
   margin: 2vw 0;
   width: 21vw;
@@ -131,14 +146,16 @@ body {
   right: -14.5vw;
 }
 .bottom .gloss .iframe,
+.bottom .instruction .iframe,
 .bottom .ex .iframe {
-  width: 62vw;
-  height: 50vw;
+  width: 70vw;
+  height: 55vw;
   margin-right: auto;
   margin-left: 5.5vw;
   border: none;
 }
 .bottom .gloss .chk,
+.bottom .instruction .chk,
 .bottom .ex .chk {
   width: 22vw;
   position: absolute;
@@ -147,11 +164,13 @@ body {
   cursor: pointer;
 }
 .bottom .gloss .img ~ .overlay .fb-btn,
+.bottom .instruction .img ~ .overlay .fb-btn,
 .bottom .ex .img ~ .overlay .fb-btn {
   top: 43.5vw;
   left: 22.5vw;
 }
 .bottom .gloss video,
+.bottom .instruction video,
 .bottom .ex video {
   width: 64vw;
   margin-right: 13vw;
@@ -160,12 +179,14 @@ body {
   border-radius: 0.3vw;
 }
 .bottom .gloss .img,
+.bottom .instruction .img,
 .bottom .ex .img {
   position: absolute;
   top: 0;
   right: 18vw;
 }
 .bottom .gloss .img div,
+.bottom .instruction .img div,
 .bottom .ex .img div {
   display: flex;
   gap: 1vw;
@@ -173,12 +194,14 @@ body {
   margin-top: 1vw;
 }
 .bottom .gloss .img div h2,
+.bottom .instruction .img div h2,
 .bottom .ex .img div h2 {
   font-family: "Tajawal", sans-serif;
   font-size: 1.9vw;
   font-weight: 500;
 }
 .bottom .gloss .img div input,
+.bottom .instruction .img div input,
 .bottom .ex .img div input {
   width: 6.5vw;
   outline: none;
@@ -190,26 +213,31 @@ body {
   border-radius: 6px;
 }
 .bottom .gloss .img h1,
+.bottom .instruction .img h1,
 .bottom .ex .img h1 {
-  font-size: 2.4vw;
+  font-size: 2vw;
   font-family: "Tajawal", sans-serif;
 }
 .bottom .gloss .img img,
+.bottom .instruction .img img,
 .bottom .ex .img img {
   width: 35vw;
   margin: 2vw auto;
   margin-right: 11vw;
 }
 .bottom .gloss .content,
+.bottom .instruction .content,
 .bottom .ex .content {
   position: relative;
 }
 .bottom .gloss .content img:first-of-type,
+.bottom .instruction .content img:first-of-type,
 .bottom .ex .content img:first-of-type {
   width: 70vw;
   animation: fade 0.3s linear;
 }
 .bottom .gloss .content img:last-of-type,
+.bottom .instruction .content img:last-of-type,
 .bottom .ex .content img:last-of-type {
   position: absolute;
   left: 0vw;
@@ -218,25 +246,30 @@ body {
   animation: fade 0.3s linear;
 }
 .bottom .gloss .btns,
+.bottom .instruction .btns,
 .bottom .ex .btns {
   display: flex;
 }
 .bottom .gloss .btns img,
+.bottom .instruction .btns img,
 .bottom .ex .btns img {
   width: 25vw;
   cursor: pointer;
 }
 .bottom .gloss .navigator,
+.bottom .instruction .navigator,
 .bottom .ex .navigator {
   position: absolute;
   top: 0;
   right: 4vw;
 }
 .bottom .gloss .navigator img,
+.bottom .instruction .navigator img,
 .bottom .ex .navigator img {
   width: 9.8vw;
 }
 .bottom .gloss .navigator button,
+.bottom .instruction .navigator button,
 .bottom .ex .navigator button {
   position: absolute;
   width: 4.4vw;
@@ -247,46 +280,57 @@ body {
   cursor: pointer;
 }
 .bottom .gloss .navigator .nav1,
+.bottom .instruction .navigator .nav1,
 .bottom .ex .navigator .nav1 {
   top: 2.3vw;
 }
 .bottom .gloss .navigator .nav2,
+.bottom .instruction .navigator .nav2,
 .bottom .ex .navigator .nav2 {
   top: 6.3vw;
 }
 .bottom .gloss .navigator .nav3,
+.bottom .instruction .navigator .nav3,
 .bottom .ex .navigator .nav3 {
   top: 10.2vw;
 }
 .bottom .gloss .navigator .nav4,
+.bottom .instruction .navigator .nav4,
 .bottom .ex .navigator .nav4 {
   top: 13.9vw;
 }
 .bottom .gloss .navigator .nav5,
+.bottom .instruction .navigator .nav5,
 .bottom .ex .navigator .nav5 {
   top: 17.6vw;
 }
 .bottom .gloss .navigator .nav6,
+.bottom .instruction .navigator .nav6,
 .bottom .ex .navigator .nav6 {
   top: 21.4vw;
 }
 .bottom .gloss .navigator .nav7,
+.bottom .instruction .navigator .nav7,
 .bottom .ex .navigator .nav7 {
   top: 25.1vw;
 }
 .bottom .gloss .navigator .nav8,
+.bottom .instruction .navigator .nav8,
 .bottom .ex .navigator .nav8 {
   top: 28.8vw;
 }
 .bottom .gloss .navigator .nav9,
+.bottom .instruction .navigator .nav9,
 .bottom .ex .navigator .nav9 {
   top: 32.5vw;
 }
 .bottom .gloss .navigator .nav10,
+.bottom .instruction .navigator .nav10,
 .bottom .ex .navigator .nav10 {
   top: 36.2vw;
 }
 .bottom .gloss div:not(.navigator) button,
+.bottom .instruction div:not(.navigator) button,
 .bottom .ex div:not(.navigator) button {
   background-color: #6fafcd;
   border-radius: 6px;
@@ -303,27 +347,45 @@ body {
   width: 15vw;
 }
 .bottom .gloss div:not(.navigator) button:hover,
+.bottom .instruction div:not(.navigator) button:hover,
 .bottom .ex div:not(.navigator) button:hover {
   background-color: #6ba6c1;
   box-shadow: 0 0.15vw 0.2vw 0.2vw #c3c3c3;
 }
+.bottom .gloss .box,
+.bottom .instruction .box,
+.bottom .ex .box {
+  background-color: #fff;
+  border: 0.2vw solid #6ba6c1 !important;
+  position: relative;
+  z-index: 3;
+}
+.bottom .gloss .box-f,
+.bottom .instruction .box-f,
+.bottom .ex .box-f {
+  background-color: #fff;
+  position: relative;
+  z-index: 3;
+}
 .bottom .gloss .overlay,
+.bottom .instruction .overlay,
 .bottom .ex .overlay {
   animation: fade 0.3s linear;
 }
-.bottom .gloss .overlay .box,
-.bottom .ex .overlay .box {
-  position: absolute;
-  left: -38.8vw;
-  width: 61.5vw;
-}
 .bottom .gloss .overlay .feedback,
+.bottom .instruction .overlay .feedback,
 .bottom .ex .overlay .feedback {
   position: absolute;
   width: 26vw;
-  left: -3vw;
+  left: 38.5vw;
+}
+.bottom .gloss .overlay button,
+.bottom .instruction .overlay button,
+.bottom .ex .overlay button {
+  left: 45.1vw !important;
 }
 .bottom .gloss .overlay h1,
+.bottom .instruction .overlay h1,
 .bottom .ex .overlay h1 {
   position: absolute;
   left: -13.1vw;
@@ -332,45 +394,54 @@ body {
   font-weight: 500;
 }
 .bottom .gloss .overlay .x,
+.bottom .instruction .overlay .x,
 .bottom .ex .overlay .x {
-  left: -1.6vw;
+  left: 39.8vw !important;
   width: 1vw;
   padding: 1.5vw;
   background: transparent !important;
   box-shadow: none !important;
 }
 .bottom .gloss .overlay::after,
+.bottom .instruction .overlay::after,
 .bottom .ex .overlay::after {
   content: "";
-  position: fixed;
+  position: fixed !important;
   width: 100%;
   height: 100vh;
   top: 0;
   left: 0;
   background: rgba(0, 0, 0, 0.7);
-  z-index: inherit;
+  z-index: 2;
   animation: fade 0.3s linear;
   transition: all 0.3s ease-in-out;
 }
 .bottom .gloss .overlay .fb-btn:not(.retry),
+.bottom .instruction .overlay .fb-btn:not(.retry),
 .bottom .ex .overlay .fb-btn:not(.retry) {
   cursor: default !important;
   box-shadow: none !important;
+  z-index: 3;
 }
 .bottom .gloss .overlay .fb-btn:not(.retry):hover,
+.bottom .instruction .overlay .fb-btn:not(.retry):hover,
 .bottom .ex .overlay .fb-btn:not(.retry):hover {
   background-color: #6fafcd !important;
 }
 .bottom .gloss .overlay .retry,
+.bottom .instruction .overlay .retry,
 .bottom .ex .overlay .retry {
+  z-index: 3;
   background-color: #7e4d7c !important;
 }
 .bottom .gloss .overlay .retry:hover,
+.bottom .instruction .overlay .retry:hover,
 .bottom .ex .overlay .retry:hover {
   background-color: #714670 !important;
   cursor: pointer !important;
 }
 .bottom .gloss input,
+.bottom .instruction input,
 .bottom .ex input {
   width: 3.8vw;
   outline: none;
@@ -381,144 +452,328 @@ body {
   border: 0.2vw solid #6fafcd;
   background: transparent;
 }
+.bottom .gloss .line,
+.bottom .instruction .line,
+.bottom .ex .line {
+  position: relative !important;
+  top: 0vw !important;
+  left: 0.5vw !important;
+}
 .bottom .gloss .line::after,
+.bottom .instruction .line::after,
 .bottom .ex .line::after {
   content: "";
   background-color: #6fafcd;
   width: 5vw;
   height: 0.25vw;
+}
+.bottom .gloss h1,
+.bottom .gloss h2,
+.bottom .gloss h3,
+.bottom .instruction h1,
+.bottom .instruction h2,
+.bottom .instruction h3,
+.bottom .ex h1,
+.bottom .ex h2,
+.bottom .ex h3 {
+  font-family: "Tajawal", sans-serif;
+  font-size: 1.9vw;
+  font-weight: 500;
+  text-align: justify;
+}
+.bottom .gloss .bullet,
+.bottom .instruction .bullet,
+.bottom .ex .bullet {
+  padding-right: 1vw;
+  position: relative;
+}
+.bottom .gloss .bullet::after,
+.bottom .instruction .bullet::after,
+.bottom .ex .bullet::after {
+  content: "";
+  width: 1.5vw;
+  height: 1.5vw;
+  background-color: #88cbd4;
+  border-radius: 50%;
   position: absolute;
-  left: -0.6vw;
-  top: 4.5vw;
+  right: -0.7vw;
+  top: 55%;
+  transform: translateY(-50%);
+}
+.bottom .gloss .ex3,
+.bottom .instruction .ex3,
+.bottom .ex .ex3 {
+  position: relative;
+  right: 7vw;
+  width: 64vw;
+}
+.bottom .gloss .ex3 span,
+.bottom .instruction .ex3 span,
+.bottom .ex .ex3 span {
+  background-color: #6fafcd;
+  border: 0.15vw solid #5489a1;
+  border-radius: 50%;
+  width: 2.8vw;
+  height: 2.8vw;
+  text-align: center;
+  line-height: 2.5vw;
+  color: #fff;
+  font-family: "Tajawal", sans-serif;
+  font-size: 2vw;
+}
+.bottom .gloss .ex3 .color,
+.bottom .instruction .ex3 .color,
+.bottom .ex .ex3 .color {
+  color: #7e4d7c;
+  width: -moz-fit-content;
+  width: fit-content;
+  border-bottom: 0.4vw solid #6fafcd;
+  padding-bottom: 0.4vw;
+}
+.bottom .gloss .ex3 .color2,
+.bottom .instruction .ex3 .color2,
+.bottom .ex .ex3 .color2 {
+  color: #6fafcd;
+}
+.bottom .gloss .ex3 .arrow,
+.bottom .instruction .ex3 .arrow,
+.bottom .ex .ex3 .arrow {
+  position: absolute;
+  top: 9.6vw;
+  left: 20.8vw;
+  width: 27.5vw;
 }
 .bottom .gloss .ex3 div div:not(.overlay),
+.bottom .instruction .ex3 div div:not(.overlay),
 .bottom .ex .ex3 div div:not(.overlay) {
   display: flex;
-  flex-direction: column;
-  position: absolute;
-  left: -20.2vw;
   gap: 1.5vw;
 }
+.bottom .gloss .ex3 .top-sec,
+.bottom .instruction .ex3 .top-sec,
+.bottom .ex .ex3 .top-sec {
+  flex-direction: column;
+}
+.bottom .gloss .ex3 .section,
+.bottom .instruction .ex3 .section,
+.bottom .ex .ex3 .section {
+  align-items: center;
+  border: 0.2vw dashed #7e4d7c;
+  width: 60vw;
+  justify-content: flex-end;
+  padding: 1vw 8vw;
+  position: relative;
+  top: 2vw;
+}
+.bottom .gloss .ex3 .section button,
+.bottom .instruction .ex3 .section button,
+.bottom .ex .ex3 .section button {
+  top: 4.5vw;
+  left: 41vw;
+}
+.bottom .gloss .ex3 .num,
+.bottom .instruction .ex3 .num,
+.bottom .ex .ex3 .num {
+  display: flex;
+  position: initial !important;
+  gap: 0.5vw !important;
+  align-items: center;
+}
+.bottom .gloss .ex3 .inputs,
+.bottom .instruction .ex3 .inputs,
+.bottom .ex .ex3 .inputs {
+  top: 51vw !important;
+  left: 30vw !important;
+  align-items: center;
+}
+.bottom .gloss .ex3 .inputs div:last-of-type,
+.bottom .instruction .ex3 .inputs div:last-of-type,
+.bottom .ex .ex3 .inputs div:last-of-type {
+  flex-direction: column;
+}
+.bottom .gloss .ex3 .vars,
+.bottom .instruction .ex3 .vars,
+.bottom .ex .ex3 .vars {
+  top: 51vw !important;
+  align-items: center;
+}
+.bottom .gloss .ex3 .vars div:last-of-type,
+.bottom .instruction .ex3 .vars div:last-of-type,
+.bottom .ex .ex3 .vars div:last-of-type {
+  flex-direction: column;
+}
+.bottom .gloss .ex3 .vars h3,
+.bottom .instruction .ex3 .vars h3,
+.bottom .ex .ex3 .vars h3 {
+  width: -moz-fit-content;
+  width: fit-content;
+  padding-right: 0.7vw;
+}
+.bottom .gloss .ex3 .vars .line::after,
+.bottom .instruction .ex3 .vars .line::after,
+.bottom .ex .ex3 .vars .line::after {
+  background-color: #000 !important;
+}
 .bottom .gloss .ex3 .g1,
+.bottom .instruction .ex3 .g1,
 .bottom .ex .ex3 .g1 {
   position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 2vw;
 }
-.bottom .gloss .ex3 .g1 div,
-.bottom .ex .ex3 .g1 div {
-  top: 62.6vw;
+.bottom .gloss .ex3 .g1 .overlay button,
+.bottom .instruction .ex3 .g1 .overlay button,
+.bottom .ex .ex3 .g1 .overlay button {
+  top: 52vw;
 }
-.bottom .gloss .ex3 .g1 .i1,
-.bottom .ex .ex3 .g1 .i1 {
-  top: 72.3vw;
+.bottom .gloss .ex3 .g1 img,
+.bottom .instruction .ex3 .g1 img,
+.bottom .ex .ex3 .g1 img {
+  width: 30vw;
+  margin-bottom: 3vw;
 }
-.bottom .gloss .ex3 .g1 .i2,
-.bottom .ex .ex3 .g1 .i2 {
-  top: 78.05vw;
+.bottom .gloss .ex3 .g1 .section,
+.bottom .instruction .ex3 .g1 .section,
+.bottom .ex .ex3 .g1 .section {
+  left: 2vw;
 }
-.bottom .gloss .ex3 .g1 button,
-.bottom .ex .ex3 .g1 button {
-  top: 65vw;
+.bottom .gloss .ex3 .g1 .vars div:last-child,
+.bottom .instruction .ex3 .g1 .vars div:last-child,
+.bottom .ex .ex3 .g1 .vars div:last-child {
+  gap: 0.5vw;
 }
 .bottom .gloss .ex3 .g2,
+.bottom .instruction .ex3 .g2,
 .bottom .ex .ex3 .g2 {
+  margin-top: 5.5vw;
+  margin-bottom: 7.85vw;
   position: relative;
 }
-.bottom .gloss .ex3 .g2 div,
-.bottom .ex .ex3 .g2 div {
-  top: 98.5vw;
+.bottom .gloss .ex3 .g2 .overlay button,
+.bottom .instruction .ex3 .g2 .overlay button,
+.bottom .ex .ex3 .g2 .overlay button {
+  top: 15.5vw;
 }
-.bottom .gloss .ex3 .g2 .i3,
-.bottom .ex .ex3 .g2 .i3 {
-  top: 111.7vw;
-}
-.bottom .gloss .ex3 .g2 .i4,
-.bottom .ex .ex3 .g2 .i4 {
-  top: 117.45vw;
-}
-.bottom .gloss .ex3 .g2 button,
-.bottom .ex .ex3 .g2 button {
-  top: 100.6vw;
+.bottom .gloss .ex3 .g2 .vars div:last-child,
+.bottom .instruction .ex3 .g2 .vars div:last-child,
+.bottom .ex .ex3 .g2 .vars div:last-child {
+  gap: 0.5vw;
 }
 .bottom .gloss .ex3 .g3,
+.bottom .instruction .ex3 .g3,
 .bottom .ex .ex3 .g3 {
+  margin-top: 6vw;
+  margin-bottom: 7.85vw;
   position: relative;
 }
 .bottom .gloss .ex3 .g3 div,
+.bottom .instruction .ex3 .g3 div,
 .bottom .ex .ex3 .g3 div {
-  top: 147.9vw;
-  left: -30.9vw !important;
+  gap: 1vw !important;
 }
-.bottom .gloss .ex3 .g3 .i5,
-.bottom .ex .ex3 .g3 .i5 {
-  left: -33.76vw;
+.bottom .gloss .ex3 .g3 .inputs div:last-of-type,
+.bottom .instruction .ex3 .g3 .inputs div:last-of-type,
+.bottom .ex .ex3 .g3 .inputs div:last-of-type {
+  flex-direction: row;
 }
-.bottom .gloss .ex3 .g3 .i6,
-.bottom .ex .ex3 .g3 .i6 {
-  left: -29.47vw;
+.bottom .gloss .ex3 .g3 button,
+.bottom .instruction .ex3 .g3 button,
+.bottom .ex .ex3 .g3 button {
+  top: 1vw;
 }
-.bottom .gloss .ex3 .g3 button:not(.x),
-.bottom .ex .ex3 .g3 button:not(.x) {
-  top: 147.8vw;
-  left: -1.5vw !important;
-  padding: 0.5vw 1vw !important;
-}
-.bottom .gloss .ex3 .g3 div,
-.bottom .ex .ex3 .g3 div {
-  flex-direction: row !important;
-  gap: 1.1vw !important;
-}
-.bottom .gloss .ex3 .g3 input,
-.bottom .ex .ex3 .g3 input {
-  width: 3vw;
-  height: 3.2vw;
-  margin-top: 0.5vw;
+.bottom .gloss .ex3 .g3 .color,
+.bottom .instruction .ex3 .g3 .color,
+.bottom .ex .ex3 .g3 .color {
+  border: none;
+  margin-top: 4vw;
 }
 .bottom .gloss .ex3 .g4,
+.bottom .instruction .ex3 .g4,
 .bottom .ex .ex3 .g4 {
+  margin-top: 0.5vw;
   position: relative;
-  top: 190vw;
 }
-.bottom .gloss .ex3 .g4 div,
-.bottom .ex .ex3 .g4 div {
-  top: -9vw;
-  left: 4.5vw !important;
+.bottom .gloss .ex3 .g4 img,
+.bottom .instruction .ex3 .g4 img,
+.bottom .ex .ex3 .g4 img {
+  width: 20vw;
 }
-.bottom .gloss .ex3 .g4 .i7,
-.bottom .ex .ex3 .g4 .i7 {
-  position: absolute;
-  border: 1px solid #6fafcd;
-  height: 3.3vw;
-  right: -5.4vw;
+.bottom .gloss .ex3 .g4 > div,
+.bottom .instruction .ex3 .g4 > div,
+.bottom .ex .ex3 .g4 > div {
+  flex-direction: column;
+  padding: 1vw;
 }
-.bottom .gloss .ex3 .g4 .i8,
-.bottom .gloss .ex3 .g4 .i9,
-.bottom .ex .ex3 .g4 .i8,
-.bottom .ex .ex3 .g4 .i9 {
-  position: absolute;
-  top: 3.9vw;
-  border: 1px solid #6fafcd;
-  height: 3.3vw;
-  right: -1.4vw;
+.bottom .gloss .ex3 .g4 .section,
+.bottom .instruction .ex3 .g4 .section,
+.bottom .ex .ex3 .g4 .section {
+  gap: 0;
 }
-.bottom .gloss .ex3 .g4 .i9,
-.bottom .ex .ex3 .g4 .i9 {
-  right: -5.4vw;
+.bottom .gloss .ex3 .g4 .section .p2,
+.bottom .instruction .ex3 .g4 .section .p2,
+.bottom .ex .ex3 .g4 .section .p2 {
+  width: 100%;
+  justify-content: space-between;
+}
+.bottom .gloss .ex3 .g4 .inputs div,
+.bottom .instruction .ex3 .g4 .inputs div,
+.bottom .ex .ex3 .g4 .inputs div {
+  flex-direction: column;
+}
+.bottom .gloss .ex3 .g4 .inputs .texts,
+.bottom .instruction .ex3 .g4 .inputs .texts,
+.bottom .ex .ex3 .g4 .inputs .texts {
+  gap: 3vw;
 }
 .bottom .gloss .ex3 .g4 button,
+.bottom .instruction .ex3 .g4 button,
 .bottom .ex .ex3 .g4 button {
-  left: -9.5vw;
   width: 11vw;
   font-size: 1.2vw;
-}
-.bottom .gloss .ex3 .g4 button:first-of-type,
-.bottom .ex .ex3 .g4 button:first-of-type {
-  top: -9.1vw;
+  right: 26.5vw;
+  top: 8.5vw;
 }
 .bottom .gloss .ex3 .g4 button:last-of-type,
+.bottom .instruction .ex3 .g4 button:last-of-type,
 .bottom .ex .ex3 .g4 button:last-of-type {
-  top: -5.1vw;
+  top: 13.8vw;
+}
+.bottom .gloss .ex3 hr,
+.bottom .instruction .ex3 hr,
+.bottom .ex .ex3 hr {
+  width: 67.3vw;
+  position: relative;
+  right: -2vw;
+}
+.bottom .gloss .exr10 .q,
+.bottom .instruction .exr10 .q,
+.bottom .ex .exr10 .q {
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  padding: 1vw;
+  min-width: 60vw;
+  max-width: 60vw;
+}
+.bottom .gloss .exr10 .g4:not(.first),
+.bottom .instruction .exr10 .g4:not(.first),
+.bottom .ex .exr10 .g4:not(.first) {
+  position: relative !important;
+  top: 0 !important;
+  right: 1vw !important;
+  display: flex;
+  align-items: flex-end;
+}
+.bottom .gloss .exr10 .g4:not(.first) button,
+.bottom .instruction .exr10 .g4:not(.first) button,
+.bottom .ex .exr10 .g4:not(.first) button {
+  position: initial;
+  height: 4vw;
 }
 .bottom .gloss .ex4,
+.bottom .instruction .ex4,
 .bottom .ex .ex4 {
   position: relative;
   top: 9vw;
@@ -526,22 +781,26 @@ body {
   width: 64vw;
 }
 .bottom .gloss .ex4 img,
+.bottom .instruction .ex4 img,
 .bottom .ex .ex4 img {
   width: 21.5vw;
 }
 .bottom .gloss .ex4 .q,
+.bottom .instruction .ex4 .q,
 .bottom .ex .ex4 .q {
   display: flex;
   align-items: flex-start;
 }
 .bottom .gloss .ex4 .q img,
+.bottom .instruction .ex4 .q img,
 .bottom .ex .ex4 .q img {
   position: absolute;
-  top: -1vw;
+  top: 4vw;
   left: 0;
   width: 23.5vw !important;
 }
 .bottom .gloss .ex4 h2,
+.bottom .instruction .ex4 h2,
 .bottom .ex .ex4 h2 {
   width: 63.5%;
   font-family: "Tajawal", sans-serif;
@@ -549,116 +808,160 @@ body {
   font-weight: 500;
 }
 .bottom .gloss .ex4 input,
+.bottom .instruction .ex4 input,
 .bottom .ex .ex4 input {
   position: absolute;
   top: 15vw;
   border: 1px solid #6fafcd;
   height: 4.3vw;
   width: 6vw;
+  right: 5vw;
 }
 .bottom .gloss .ex4 button,
+.bottom .instruction .ex4 button,
 .bottom .ex .ex4 button {
   top: 15vw;
-  right: 11vw;
+  right: 14vw;
 }
 .bottom .gloss .exr10,
+.bottom .instruction .exr10,
 .bottom .ex .exr10 {
   top: 3vw !important;
 }
 .bottom .gloss .exr10 h2,
+.bottom .instruction .exr10 h2,
 .bottom .ex .exr10 h2 {
   width: initial !important;
 }
 .bottom .gloss .exr10 button,
+.bottom .instruction .exr10 button,
 .bottom .ex .exr10 button {
   top: 8.5vw;
   right: 40vw;
 }
 .bottom .gloss .exr10 .q,
+.bottom .instruction .exr10 .q,
 .bottom .ex .exr10 .q {
   position: absolute;
 }
 .bottom .gloss .exr10 .q textarea,
+.bottom .instruction .exr10 .q textarea,
 .bottom .ex .exr10 .q textarea {
   font-size: 1.3vw;
   font-family: "Tajawal", sans-serif;
   border: 0.2vw solid #6ba6c1;
   width: 39vw;
+  outline: none;
+}
+.bottom .gloss .exr10 .q textarea:focus,
+.bottom .instruction .exr10 .q textarea:focus,
+.bottom .ex .exr10 .q textarea:focus {
+  border: 0.2vw solid #5489a1;
 }
 .bottom .gloss .exr10 .q button,
+.bottom .instruction .exr10 .q button,
 .bottom .ex .exr10 .q button {
   width: 14vw;
   font-size: 1.6vw;
 }
 .bottom .gloss .exr10 .q:nth-of-type(1),
+.bottom .instruction .exr10 .q:nth-of-type(1),
 .bottom .ex .exr10 .q:nth-of-type(1) {
   top: 0vw;
 }
 .bottom .gloss .exr10 .q:nth-of-type(1) input,
+.bottom .instruction .exr10 .q:nth-of-type(1) input,
 .bottom .ex .exr10 .q:nth-of-type(1) input {
   right: 22.5vw;
   top: 15.2vw;
 }
 .bottom .gloss .exr10 .q:nth-of-type(1) input:nth-of-type(1),
+.bottom .instruction .exr10 .q:nth-of-type(1) input:nth-of-type(1),
 .bottom .ex .exr10 .q:nth-of-type(1) input:nth-of-type(1) {
   top: 10.2vw;
 }
 .bottom .gloss .exr10 .q:nth-of-type(1) input:nth-of-type(3),
+.bottom .instruction .exr10 .q:nth-of-type(1) input:nth-of-type(3),
 .bottom .ex .exr10 .q:nth-of-type(1) input:nth-of-type(3) {
   right: 29.2vw !important;
 }
 .bottom .gloss .exr10 .q:nth-of-type(1) button,
+.bottom .instruction .exr10 .q:nth-of-type(1) button,
 .bottom .ex .exr10 .q:nth-of-type(1) button {
   right: 38vw;
 }
 .bottom .gloss .exr10 .q:nth-of-type(1) button:nth-of-type(1),
+.bottom .instruction .exr10 .q:nth-of-type(1) button:nth-of-type(1),
 .bottom .ex .exr10 .q:nth-of-type(1) button:nth-of-type(1) {
   top: 10.2vw;
 }
 .bottom .gloss .exr10 .q:nth-of-type(1) button:nth-of-type(2),
+.bottom .instruction .exr10 .q:nth-of-type(1) button:nth-of-type(2),
 .bottom .ex .exr10 .q:nth-of-type(1) button:nth-of-type(2) {
   top: 15.5vw;
 }
 .bottom .gloss .exr10 .q:nth-of-type(2),
+.bottom .instruction .exr10 .q:nth-of-type(2),
 .bottom .ex .exr10 .q:nth-of-type(2) {
-  top: 23vw;
+  top: 26.5vw;
 }
 .bottom .gloss .exr10 .q:nth-of-type(2) .g4,
+.bottom .instruction .exr10 .q:nth-of-type(2) .g4,
 .bottom .ex .exr10 .q:nth-of-type(2) .g4 {
   position: absolute;
   top: 9vw;
 }
 .bottom .gloss .exr10 .q:nth-of-type(3),
+.bottom .instruction .exr10 .q:nth-of-type(3),
 .bottom .ex .exr10 .q:nth-of-type(3) {
-  top: 48vw;
+  top: 51vw;
 }
 .bottom .gloss .exr10 .q:nth-of-type(3) .g4,
+.bottom .instruction .exr10 .q:nth-of-type(3) .g4,
 .bottom .ex .exr10 .q:nth-of-type(3) .g4 {
   position: absolute;
   top: 4vw;
 }
 .bottom .gloss .exr8 ~ .ex4,
+.bottom .instruction .exr8 ~ .ex4,
 .bottom .ex .exr8 ~ .ex4 {
   top: 30vw;
 }
 .bottom .gloss .exr8 ~ .ex4 .g2,
+.bottom .instruction .exr8 ~ .ex4 .g2,
 .bottom .ex .exr8 ~ .ex4 .g2 {
   position: absolute;
   top: 5vw;
   left: 56vw;
 }
 .bottom .gloss .exr8 ~ .ex4 .g2 button,
+.bottom .instruction .exr8 ~ .ex4 .g2 button,
 .bottom .ex .exr8 ~ .ex4 .g2 button {
   height: 4vw;
   font-size: 1.8vw;
 }
 .bottom .gloss .exr8 ~ .ex4 .g2 input,
+.bottom .instruction .exr8 ~ .ex4 .g2 input,
 .bottom .ex .exr8 ~ .ex4 .g2 input {
   height: 3.5vw;
 }
 .bottom .gloss .exr8 .g4,
+.bottom .instruction .exr8 .g4,
 .bottom .ex .exr8 .g4 {
   top: 22vw;
+}
+.bottom .instruction {
+  width: 45vw;
+  left: -20vw;
+}
+.bottom .instruction img {
+  width: 96%;
+}
+.bottom .instruction h2 {
+  font-size: 2vw;
+  font-family: "Tajawal", sans-serif;
+  margin-top: 2vw;
+  letter-spacing: 0.05vw;
 }
 
 @keyframes fade {

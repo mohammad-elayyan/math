@@ -233,11 +233,11 @@ window.onload = () => {
         label=labels;
         if(get_inversed_ProjectedX(element[0])>0)
         {
-          write_txt(label[i]+'`',element[0][0]-get_inversed_ProjectedX(-1000), element[1])
+          write_txt(label[i]+'`',element[0][0]-get_inversed_ProjectedX(sq_width*step_pixles*2), element[1])
         }
         else
         {
-          write_txt(label[i]+'`',element[0][0]-get_inversed_ProjectedX(2000), element[1])
+          write_txt(label[i]+'`',element[0][0]-get_inversed_ProjectedX(sq_width*step_pixles*2), element[1])
 
         }
 
@@ -473,7 +473,7 @@ document.querySelector('.myClose').onclick=()=>
           drawDot(just_moving_X, just_moving_Y, DotSize, myBlue);
         }
 
-        if(opt_selector ==='draw-shape')
+        if(opt_selector ==='draw-shape' )
         {
           shape_X_arr.push(just_moving_X);
           shape_Y_arr.push(just_moving_Y);
@@ -547,7 +547,7 @@ document.querySelector('.myClose').onclick=()=>
     // D_global = D_global.toFixed(0);
 
     set_current_Distance(D_global);
-    write_txt("المسافة هي : " + D_global, canvas.width / 6, canvas.height / 3);
+    write_txt("المسافة هي : " + D_global, canvas.width / 6, canvas.height / 2);
   }
 
   function set_current_Distance(D_global) {
@@ -627,7 +627,9 @@ undo.onclick=()=>
         drawShape([[givenPoint[0],givenPoint[1]],[element[0],element[1]]], 'red', true, LineSize);
       });
 
+
       if (window.innerWidth <= 520) LineSize = 2;
+
 
       drawShape(shape_points, myLightBlue, false, LineSize,'A`');
  
@@ -646,7 +648,7 @@ undo.onclick=()=>
     drawY_lines();
     // drawXY_axis(4,4);
 
-    // write_txt("O", givenPoint[0], givenPoint[1] - sq_width / 2);
+    write_txt("O", givenPoint[0], givenPoint[1] - sq_width / 3);
     let redDotSize = 9;
     if (window.innerWidth < 991 && window.innerWidth > 520) redDotSize = 6;
     else if (window.innerWidth <= 520) redDotSize = 3;
@@ -664,13 +666,13 @@ undo.onclick=()=>
       // console.log(get_inversed_ProjectedY(y_pos));
 
      
-        if(get_inversed_ProjectedY(y_pos)>0)
+        if(get_inversed_ProjectedY(y_pos)>=0)
         {
-          write_txt(labels[i],x_pos, y_pos-get_inversed_ProjectedY(getProjectedY(10)),"0.8vw tj-b")
+          write_txt(labels[i],x_pos, y_pos-get_inversed_ProjectedY(sq_width),"0.9vw tj-b")
         }
         else
         {
-          write_txt(labels[i],x_pos, y_pos-get_inversed_ProjectedY(getProjectedY(-8)),"0.8vw tj-b")
+          write_txt(labels[i],x_pos, y_pos-get_inversed_ProjectedY(sq_width*step_pixles*1.5),"0.9vw tj-b")
 
         }
 

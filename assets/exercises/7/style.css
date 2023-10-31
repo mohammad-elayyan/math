@@ -98,9 +98,9 @@ label {
 .header {
     text-align: center;
     direction: rtl;
-    font-size: 1vw;
+    font-size: 1.5vw;
     color: white;
-    padding: 0.5vw;
+    padding: 1vw;
     position: relative;
     height: fit-content;
     /* min-height: 100px; */

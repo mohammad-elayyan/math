@@ -8,7 +8,7 @@ window.onload = () => {
   const canvas = document.getElementById("myc");
   const board = document.getElementById("board");
   const header = document.querySelector(".header");
-  const step_pixles = 16;
+  const step_pixles = 18;
   const context = canvas.getContext("2d");
   canvas.style.background = "#FFF";
   let saved_distances_div = document.querySelector(".saved-distances");
@@ -26,7 +26,6 @@ window.onload = () => {
     [getProjectedX(1), getProjectedY(1), 3],
     [getProjectedX(2), getProjectedY(1), 3],
     [getProjectedX(2), getProjectedY(0), 3],
-
    
   ];
   let slop_arr = [];
@@ -211,7 +210,7 @@ window.onload = () => {
     context.fillStyle = color;
     context.lineWidth = 1;
     context.stroke();
-    context.fill();
+    // context.fill();
     context.closePath();
   }
 
@@ -236,11 +235,11 @@ window.onload = () => {
         label=labels;
         if(get_inversed_ProjectedX(element[0])>0)
         {
-          write_txt(label[i]+'`',element[0][0]-get_inversed_ProjectedX(-1000), element[1])
+          write_txt(label[i]+'`',element[0][0]-get_inversed_ProjectedX(sq_width*step_pixles*2), element[1])
         }
         else
         {
-          write_txt(label[i]+'`',element[0][0]-get_inversed_ProjectedX(1000), element[1])
+          write_txt(label[i]+'`',element[0][0]-get_inversed_ProjectedX(sq_width*step_pixles*2), element[1])
 
         }
 
@@ -313,73 +312,72 @@ window.onload = () => {
       }
     });
   }
-
   fill_distance_array();
-function check_drawings(tempShape,tempPoints)
-{
-  let mytemp=[];
 
-  console.log('drawed :',tempShape);
-  console.log('original : ',tempPoints);
-  console.log('givien point : ',givenPoint[1]);
-
-
-// console.log(slop_arr);
-// console.log(c_arr);
-
-
-tempPoints.forEach((point,i) => {
-  find_slop(givenPoint[0], givenPoint[1],point[0], point[1]);
-});
-tempPoints.forEach((point,i) => {
-  find_c(givenPoint[0], givenPoint[1],slop_arr[i]);
-  let tempX=calculate_X_Prime_using_distance(i);
-  // console.log(tempX);
-  mytemp.push(get_point_on_straight_line(slop_arr[i],tempX,c_arr[i]));
-});
-tempPoints.forEach((point,i) => {
-  if (slop_arr[i] == "Infinity"){
-    console.log(distance_array);
-    mytemp[i][1]=parseFloat(givenPoint[1])+parseFloat(distance_array[i]*scale_factor);
-    // mytemp[i][1]=0;
-
-  }
-});
-console.log('code generated : ' , mytemp);
+  function check_drawings(tempShape,tempPoints)
+  {
+    let mytemp=[];
   
-  let tolerance=0.01;
-  console.log(get_inversed_ProjectedY(tolerance));
-    if (mytemp.length != tempShape.length) 
-        return false;
+    console.log('drawed :',tempShape);
+    console.log('original : ',tempPoints);
+    console.log('givien point : ',givenPoint[1]);
   
-    for (let index = 0; index < tempShape.length; index++) {
-     
-      if (get_inversed_ProjectedX(tempShape[index][0][0]) > parseFloat(get_inversed_ProjectedX(mytemp[index][0]))+tolerance 
-      ||get_inversed_ProjectedX( tempShape[index][0][0]) < parseFloat(get_inversed_ProjectedX((mytemp[index][0]))-tolerance ) )
-          return false;
-      if (get_inversed_ProjectedY(tempShape[index][1][0]) > parseFloat(get_inversed_ProjectedY(mytemp[index][1]))+tolerance 
-      ||get_inversed_ProjectedY( tempShape[index][1][0]) < parseFloat(get_inversed_ProjectedY((mytemp[index][1]))-tolerance ) )
-          return false;
+  
+  // console.log(slop_arr);
+  // console.log(c_arr);
+  
+  
+  tempPoints.forEach((point,i) => {
+    find_slop(givenPoint[0], givenPoint[1],point[0], point[1]);
+  });
+  tempPoints.forEach((point,i) => {
+    find_c(givenPoint[0], givenPoint[1],slop_arr[i]);
+    let tempX=calculate_X_Prime_using_distance(i);
+    // console.log(tempX);
+    mytemp.push(get_point_on_straight_line(slop_arr[i],tempX,c_arr[i]));
+  });
+  tempPoints.forEach((point,i) => {
+    if (slop_arr[i] == "Infinity"){
+      console.log(distance_array);
+      mytemp[i][1]=parseFloat(givenPoint[1])+parseFloat(distance_array[i]*scale_factor);
+      // mytemp[i][1]=0;
+  
     }
-    return true;
-}
+  });
+  console.log('code generated : ' , mytemp);
+    
+    let tolerance=0.01;
+    console.log(get_inversed_ProjectedY(tolerance));
+      if (mytemp.length != tempShape.length) 
+          return false;
+    
+      for (let index = 0; index < tempShape.length; index++) {
+       
+        if (get_inversed_ProjectedX(tempShape[index][0][0]) > parseFloat(get_inversed_ProjectedX(mytemp[index][0]))+tolerance 
+        ||get_inversed_ProjectedX( tempShape[index][0][0]) < parseFloat(get_inversed_ProjectedX((mytemp[index][0]))-tolerance ) )
+            return false;
+        if (get_inversed_ProjectedY(tempShape[index][1][0]) > parseFloat(get_inversed_ProjectedY(mytemp[index][1]))+tolerance 
+        ||get_inversed_ProjectedY( tempShape[index][1][0]) < parseFloat(get_inversed_ProjectedY((mytemp[index][1]))-tolerance ) )
+            return false;
+      }
+      return true;
+  }
 chkBtn.onclick=()=>
 {
-  // console.log(shape_points);
-  // console.log(points);
+  // console.log(shape_points[0][0][0]);
+  // console.log(points[0][0]);
 
   let tempPoints=points;
   let tempShape=shape_points;
 
-  let temp=tempShape[tempShape.length-1];
+  // let temp=tempShape[tempShape.length-1];
   // tempShape.pop();
   // tempShape.unshift(temp);
   // console.log(tempShape);
-  // console.log(tempPoints);
+//   console.log(tempPoints);
 
   if(check_drawings(tempShape,tempPoints))
   {
-    console.log('correct');
     overlay_box.style.display='flex';
     overlay_box.style.justifyContent='center';
     overlay_box.style.alignItems='center';
@@ -395,8 +393,6 @@ chkBtn.onclick=()=>
   }
 else
 {
-  console.log('false');
-
     overlay_box.style.display='flex';
     overlay_box.style.justifyContent='center';
     overlay_box.style.alignItems='center';
@@ -501,7 +497,7 @@ document.querySelector('.myClose').onclick=()=>
           drawDot(just_moving_X, just_moving_Y, DotSize, myBlue);
         }
 
-        if(opt_selector ==='draw-shape')
+        if(opt_selector ==='draw-shape' )
         {
           shape_X_arr.push(just_moving_X);
           shape_Y_arr.push(just_moving_Y);
@@ -575,7 +571,7 @@ document.querySelector('.myClose').onclick=()=>
     // D_global = D_global.toFixed(0);
 
     set_current_Distance(D_global);
-    write_txt("المسافة هي : " + D_global, canvas.width / 6, canvas.height / 3);
+    write_txt("المسافة هي : " + D_global, canvas.width / 6, canvas.height / 2);
   }
 
   function set_current_Distance(D_global) {
@@ -655,7 +651,11 @@ undo.onclick=()=>
         drawShape([[givenPoint[0],givenPoint[1]],[element[0],element[1]]], 'red', true, LineSize);
       });
 
+
       if (window.innerWidth <= 520) LineSize = 2;
+if (shape_points.length==points.length) {
+  is_finished=true;
+}
 
       drawShape(shape_points, myLightBlue, false, LineSize,'A`');
  
@@ -672,7 +672,7 @@ undo.onclick=()=>
     y_guide_start = 0;
     drawX_lines();
     drawY_lines();
-    // drawXY_axis(6,5);
+    // drawXY_axis(4,4);
 
     write_txt("O", givenPoint[0], givenPoint[1] - sq_width / 2);
     let redDotSize = 9;
@@ -692,13 +692,13 @@ undo.onclick=()=>
       // console.log(get_inversed_ProjectedY(y_pos));
 
      
-        if(get_inversed_ProjectedY(y_pos)>0)
+        if(get_inversed_ProjectedX(x_pos)>0)
         {
-          write_txt(labels[i],x_pos, y_pos-get_inversed_ProjectedY(getProjectedY(10)),"0.8vw tj-b")
+          write_txt(labels[i],x_pos-get_inversed_ProjectedX(sq_width), y_pos-get_inversed_ProjectedY(sq_width),"0.9vw tj-b")
         }
         else
         {
-          write_txt(labels[i],x_pos, y_pos-get_inversed_ProjectedY(getProjectedY(-18)),"0.8vw tj-b")
+          write_txt(labels[i],x_pos-get_inversed_ProjectedX(sq_width*step_pixles), y_pos-get_inversed_ProjectedY(sq_width),"0.9vw tj-b")
 
         }
 

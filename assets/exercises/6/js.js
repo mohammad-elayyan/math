@@ -8,39 +8,46 @@ window.onload = () => {
   const canvas = document.getElementById("myc");
   const board = document.getElementById("board");
   const header = document.querySelector(".header");
-  const step_pixles = 30;
+  const step_pixles = 32;
   const context = canvas.getContext("2d");
   canvas.style.background = "#FFF";
+  canvas.style.cursor = "pointer";
+
   let saved_distances_div = document.querySelector(".saved-distances");
   let x_guide_start = 0;
   let y_guide_start = 0;
   let cw, ch;
+  let cw_ratio = 2;
+  let ch_ratio = 1.6;
   resize();
   let m, c, xy_pair;
   let line_extension = 1000;
   let scale_factor = 3;
   let givenPoint = [getProjectedX(0), getProjectedY(0), 2];
   let points = [
-    [getProjectedX(-1), getProjectedY(0), 3],
     [getProjectedX(0), getProjectedY(2), 3],
     [getProjectedX(2), getProjectedY(0), 3],
     [getProjectedX(-1), getProjectedY(-2), 3],
-
-   
+    [getProjectedX(-1), getProjectedY(0), 3],
   ];
   let slop_arr = [];
   let c_arr = [];
   let distance_array = [];
   let new_points = [];
   let sq_width = cw / step_pixles;
-  let My_measure = ["OA=", "OB=", "OC=", "OD="];
+
+  let LineSize = sq_width/10;
+  let DotSize = sq_width/5;
+
+
+  // let My_measure = ["OA=", "OB=", "OC="];
 
   let confirm_box = document.querySelector(".confirm");
   let ok_d = confirm_box.querySelector("#ok_d");
   let cancel_d = confirm_box.querySelector("#cancel_d");
   let overlay_box = document.querySelector(".overlay");
   let chkBtn=document.getElementById('chkBtn');
-
+  let startBtn=document.getElementById('startBtn');
   let current_Distance = 0;
 
   //////////new
@@ -49,7 +56,6 @@ window.onload = () => {
   var just_clicked_Y = null;
   var just_moving_X = null;
   var just_moving_Y = null;
-
 
   let screenWidth = document.documentElement.clientWidth;
   let screenHeight = document.documentElement.clientHeight;
@@ -67,15 +73,18 @@ window.onload = () => {
   let shape_Y_arr = [];
 
 
-  let labels = ["A", "B", "C","D"];
+  let labels = ["A", "B", "C", "D"];
+
+  
 
   
   
-  let opt_selector = "na";
+  let opt_selector = "draw-shape";
 
    let line_points = [];
    let shape_points = [];
 
+   write_txt("إبدأ", getProjectedX(0), getProjectedY(10),'4vw tj-b');
 
   function resize() {
     let w = getComputedStyle(board).width.split("px")[0];
@@ -92,7 +101,7 @@ window.onload = () => {
   window.onresize = () => {
     resize();
     initial_setup();
-    fill_distance_div();
+    // fill_distance_div();
   };
 
 
@@ -144,8 +153,8 @@ window.onload = () => {
   let axisOffset=0.5;
   function drawXY_axis(limX,limY) {
     context.strokeStyle = "blue";
-    draw(getProjectedX(-limX-axisOffset), getProjectedX(limX+axisOffset), ch / 2, ch / 2);
-    draw(cw / 2, cw / 2, getProjectedY(-limY-axisOffset), getProjectedY(limY+axisOffset));
+    draw(getProjectedX(-limX-axisOffset), getProjectedX(limX+axisOffset), ch /ch_ratio, ch /ch_ratio);
+    draw(cw / cw_ratio, cw / cw_ratio, getProjectedY(-limY-axisOffset), getProjectedY(limY+axisOffset));
     draw_ticks(limX,limY);
 
   }
@@ -184,21 +193,20 @@ window.onload = () => {
   }
 
   function getProjectedX(xglobal) {
-    return  ((xglobal * cw) / step_pixles + cw / 2).toFixed(1);;
+    return  ((xglobal * cw) / step_pixles + (cw / cw_ratio)).toFixed(0);
 
   }
-
   function getProjectedY(yglobal) {
-    return (-1 * ((yglobal * ch) / step_pixles) + ch / 2).toFixed(1);;
+    return (-1 * ((yglobal * ch) / step_pixles) + (ch / ch_ratio)).toFixed(0);;
   }
 
 
   function get_inversed_ProjectedX(x_in_pixels) {
-    return ((step_pixles/cw)*(x_in_pixels-cw/2)).toFixed(1); ;
+    return ((step_pixles/cw)*(x_in_pixels-cw/cw_ratio)).toFixed(0); ;
   }
 
   function get_inversed_ProjectedY(y_in_pixels) {
-    return (-1 * (step_pixles/ch)*(y_in_pixels-ch/2)).toFixed(1); ;
+    return (-1 * (step_pixles/ch)*(y_in_pixels-ch/ch_ratio)).toFixed(0); ;
   }
 
 
@@ -210,7 +218,7 @@ window.onload = () => {
     context.fillStyle = color;
     context.lineWidth = 1;
     context.stroke();
-    // context.fill();
+    context.fill();
     context.closePath();
   }
 
@@ -235,11 +243,12 @@ window.onload = () => {
         label=labels;
         if(get_inversed_ProjectedX(element[0])>0)
         {
-          write_txt(label[i]+'`',element[0][0]-get_inversed_ProjectedX(-1000), element[1])
+          write_txt(label[i]+'`'+'(' + get_inversed_ProjectedX(shape_X_arr[i]) + ' , ' + get_inversed_ProjectedY(shape_Y_arr[i]) + ')',element[0][0]-get_inversed_ProjectedX(sq_width*step_pixles*2), element[1])
+          console.log(sq_width*step_pixles*2);
         }
         else
         {
-          write_txt(label[i]+'`',element[0][0]-get_inversed_ProjectedX(2000), element[1])
+          write_txt(label[i]+'`'+'('+ get_inversed_ProjectedX(shape_X_arr[i]) + ' , ' + get_inversed_ProjectedY(shape_Y_arr[i]) + ')',element[0][0]-get_inversed_ProjectedX(sq_width*step_pixles*2), element[1])
 
         }
 
@@ -389,7 +398,7 @@ document.querySelector('.myClose').onclick=()=>
 
   function get_distance(x1, y1, x2, y2) {
     let distance = Math.sqrt(Math.pow(x2 - x1, 2) + Math.pow(y2 - y1, 2));
-    return distance.toFixed(1);
+    return distance.toFixed(2);
     // return distance.toFixed(0);
 
   }
@@ -435,20 +444,22 @@ document.querySelector('.myClose').onclick=()=>
 
 
   document.addEventListener("mousemove", onMouseUpdate, false);
-  canvas.addEventListener("click", onMouseClicked, false);
+  canvas.addEventListener("click", onMouseClicked, true);
 
 
 
-  document.getElementById("measureOrDraw").onchange = (e) => {
-    opt_selector = document.getElementById("measureOrDraw").value;
-  };
+  // document.getElementById("measureOrDraw").onchange = (e) => {
+  //   opt_selector = document.getElementById("measureOrDraw").value;
+  // };
 
   function onMouseClicked(e) {
+    canvas.style.cursor = "none";
     if(opt_selector !='na')
     {
       is_finished = !is_finished;
     }
     console.log(opt_selector);
+    console.log(e.target.id);
 
     if (is_finished == false && e.target.id == "myc" && opt_selector != 'na') {
 
@@ -457,6 +468,7 @@ document.querySelector('.myClose').onclick=()=>
       just_clicked_Y = e.pageY - offsetY;
       clicked_X_arr.push(just_clicked_X);
       clicked_Y_arr.push(just_clicked_Y);
+
     } else {
       if (get_current_radio != -1 && opt_selector === "measure") {
         confirm_box.style.display = "block";
@@ -469,20 +481,18 @@ document.querySelector('.myClose').onclick=()=>
         {
           line_X_arr.push(just_moving_X);
           line_Y_arr.push(just_moving_Y);
-          let DotSize = 5;
-          if (window.innerWidth < 991 && window.innerWidth > 520) DotSize = 4;
-          else if (window.innerWidth <= 520) DotSize = 3;
           drawDot(just_moving_X, just_moving_Y, DotSize, myBlue);
+
         }
 
         if(opt_selector ==='draw-shape')
         {
           shape_X_arr.push(just_moving_X);
           shape_Y_arr.push(just_moving_Y);
-          let DotSize = 5;
-          if (window.innerWidth < 991 && window.innerWidth > 520) DotSize = 4;
-          else if (window.innerWidth <= 520) DotSize = 3;
           drawDot(just_moving_X, just_moving_Y, DotSize, myBlue);
+          //  
+          canvas.style.cursor = "pointer";
+
         }
 
 
@@ -531,13 +541,14 @@ document.querySelector('.myClose').onclick=()=>
     if (is_draw == true && is_finished == false && e.target.id == "myc") {
       just_moving_X = e.pageX - offsetX;
       just_moving_Y = e.pageY - offsetY;
+
+      just_moving_X=getProjectedX(parseInt(get_inversed_ProjectedX(just_moving_X)));
+      just_moving_Y=getProjectedY(parseInt(get_inversed_ProjectedY(just_moving_Y)));
+
       //   clicked_X_arr.forEach((element, i) => {
       draw_while_move(just_moving_X, just_moving_Y);
-      let DotSize = 5;
-      if (window.innerWidth < 991 && window.innerWidth > 520) DotSize = 4;
-      else if (window.innerWidth <= 520) DotSize = 3;
-      drawDot(just_moving_X, just_moving_Y, DotSize, myBlue);
-      draw_display(givenPoint[0], givenPoint[1], just_moving_X, just_moving_Y);
+      drawDot(just_moving_X, just_moving_Y, DotSize, 'black');
+      draw_display( get_inversed_ProjectedX(just_moving_X), get_inversed_ProjectedY(just_moving_Y), 0, 0);
       //   });
     }
   }
@@ -545,11 +556,12 @@ document.querySelector('.myClose').onclick=()=>
     let D_global = get_distance(x1, y1, x2, y2);
     sq_width = cw / step_pixles;
     D_global = D_global / sq_width;
-    D_global = D_global.toFixed(1);
+    D_global = D_global.toFixed(0);
     // D_global = D_global.toFixed(0);
 
-    set_current_Distance(D_global);
-    write_txt("المسافة هي : " + D_global, canvas.width / 6, canvas.height / 3);
+    // set_current_Distance(D_global);
+    // write_txt("المسافة هي : " + D_global, canvas.width / 6, canvas.height / 3);
+    write_txt('(x , y) = '+"(" + x1 +' , '+ y1 + ')' , canvas.width / 6, canvas.height / 3);
   }
 
   function set_current_Distance(D_global) {
@@ -559,13 +571,13 @@ document.querySelector('.myClose').onclick=()=>
   function draw_while_move(x2, y2) {
     clearCanvas(context,0, 0, cw, ch);
     context.beginPath();
-    clicked_X_arr.forEach((point, i) => {
-      context.lineTo(givenPoint[0], givenPoint[1]);
-      context.lineTo(x2, y2);
-      context.strokeStyle = "#04b348eb";
-      context.lineWidth = 2;
-      context.stroke();
-    });
+    // clicked_X_arr.forEach((point, i) => {
+    //   context.lineTo(givenPoint[0], givenPoint[1]);
+    //   context.lineTo(x2, y2);
+    //   context.strokeStyle = "#04b348eb";
+    //   context.lineWidth = 2;
+    //   context.stroke();
+    // });
 
     increment_line_shape_by_array();
     initial_setup();
@@ -605,9 +617,6 @@ undo.onclick=()=>
   {
     line_points = [];
     line_X_arr.forEach((point, i) => {
-      let DotSize = 5;
-      if (window.innerWidth < 991 && window.innerWidth > 520) DotSize = 4;
-      else if (window.innerWidth <= 520) DotSize = 3;
       drawDot(line_X_arr[i], line_Y_arr[i], DotSize,myBlue);
       let temp = [[line_X_arr[i]], [line_Y_arr[i]]];
       line_points.push(temp);
@@ -615,21 +624,24 @@ undo.onclick=()=>
 
     shape_points = [];
     shape_X_arr.forEach((point, i) => {
-      let DotSize = 5;
-      if (window.innerWidth < 991 && window.innerWidth > 520) DotSize = 4;
-      else if (window.innerWidth <= 520) DotSize = 3;
       drawDot(shape_X_arr[i], shape_Y_arr[i], DotSize,myBlue);
+
       let temp = [[shape_X_arr[i]], [shape_Y_arr[i]]];
       shape_points.push(temp);
+
     });
 
     
-    let LineSize = 3;
     line_points.forEach(element => {
         drawShape([[givenPoint[0],givenPoint[1]],[element[0],element[1]]], 'red', true, LineSize);
       });
 
-      if (window.innerWidth <= 520) LineSize = 2;
+      if(shape_points.length==points.length)
+      {
+        canvas.style.cursor = "pointer";
+
+        is_finished=true;
+      } 
 
       drawShape(shape_points, myLightBlue, false, LineSize,'A`');
  
@@ -647,20 +659,15 @@ undo.onclick=()=>
     drawX_lines();
     drawY_lines();
     drawXY_axis(4,4);
-
-    // write_txt("O", givenPoint[0], givenPoint[1] - sq_width / 2);
-    let redDotSize = 9;
-    if (window.innerWidth < 991 && window.innerWidth > 520) redDotSize = 6;
-    else if (window.innerWidth <= 520) redDotSize = 3;
-    drawDot(givenPoint[0], givenPoint[1], redDotSize,myBlue);
-    let LineSize = 3;
-    if (window.innerWidth <= 520) LineSize = 2;
+    drawDot(givenPoint[0], givenPoint[1], DotSize,myBlue);
+   
     drawShape(points, myLightBlue, false, LineSize);
 
     //label for points
     points.forEach((element, i) => {
       let x_pos=element[0];
       let y_pos=element[1];
+      drawDot(element[0], element[1], sq_width/step_pixles*2.5,myBlue);
 
       // console.log(get_inversed_ProjectedX(x_pos));
       // console.log(get_inversed_ProjectedY(y_pos));
@@ -668,11 +675,11 @@ undo.onclick=()=>
      
         if(get_inversed_ProjectedY(y_pos)>0)
         {
-          write_txt(labels[i],x_pos, y_pos-get_inversed_ProjectedY(getProjectedY(10)),"0.8vw tj-b")
+          write_txt(labels[i]+'('+parseInt(get_inversed_ProjectedX(x_pos)) + ','+ parseInt(get_inversed_ProjectedY(y_pos)) + ')',x_pos, y_pos-get_inversed_ProjectedY(getProjectedY(15)),"0.8vw tj-b");
         }
         else
         {
-          write_txt(labels[i],x_pos, y_pos-get_inversed_ProjectedY(getProjectedY(-8)),"0.8vw tj-b")
+          write_txt(labels[i]+'('+parseInt(get_inversed_ProjectedX(x_pos)) + ','+ parseInt(get_inversed_ProjectedY(y_pos)) + ')',x_pos, y_pos-get_inversed_ProjectedY(getProjectedY(-20)),"0.8vw tj-b")
 
         }
 
@@ -680,14 +687,14 @@ undo.onclick=()=>
     });
   }
 
-  function fill_distance_div() {
-    saved_distances_div.querySelector(".measures").innerHTML=``;
-    My_measure.forEach((element) => {
-      let p = document.createElement("p");
-      p.innerText = element;
-      saved_distances_div.querySelector(".measures").append(p);
-    });
-  }
+  // function fill_distance_div() {
+  //   saved_distances_div.querySelector(".measures").innerHTML=``;
+  //   My_measure.forEach((element) => {
+  //     let p = document.createElement("p");
+  //     p.innerText = element;
+  //     saved_distances_div.querySelector(".measures").append(p);
+  //   });
+  // }
 
   function write_txt(txt, text_x, text_y,font_prop) {
     context.font = "1.5vw tj-b";
@@ -702,5 +709,5 @@ undo.onclick=()=>
   }
 
   initial_setup();
-  fill_distance_div();
+  // fill_distance_div();
 };

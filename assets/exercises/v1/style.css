@@ -85,14 +85,15 @@ label {
 }
 
 .saved-distances {
-    width: inherit;
-    height: inherit;
+    /* width: inherit;
+    height: inherit; */
     /* position: absolute;
     top: 0;
     left: 15%; */
     display: flex;
     flex-direction: column;
     align-items: center;
+    padding: 0vw 1vw;
 }
 
 .header {
@@ -119,20 +120,28 @@ label {
 .select {
     display: flex;
     gap: .5vw;
+    flex-direction: column;
 
 }
 
 select {
-    font-size: 1.5vw;
+    /* font-size: 1.5vw;
     text-align: center;
     border: dashed 0.2vw #7e4d7c;
+    color: #7e4d7c; */
+
+    font-size: 1vw;
+    text-align: center;
+    border: dashed 0.1vw #86b6d7;
     color: #7e4d7c;
+    min-width: 7vw;
+    
 }
 
 .measures {
     display: flex;
     justify-content: space-between;
-    width: 50%;
+    width: 90%;
     margin: .5vw;
     /* direction: ltr; */
 }

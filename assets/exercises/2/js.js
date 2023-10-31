@@ -8,13 +8,15 @@ window.onload = () => {
   const canvas = document.getElementById("myc");
   const board = document.getElementById("board");
   const header = document.querySelector(".header");
-  const step_pixles = 44;
+  const step_pixles = 24;
   const context = canvas.getContext("2d");
   canvas.style.background = "#FFF";
   let saved_distances_div = document.querySelector(".saved-distances");
   let x_guide_start = 0;
   let y_guide_start = 0;
   let cw, ch;
+  let cw_ratio = 2;
+  let ch_ratio = 1.41;
   resize();
   let m, c, xy_pair;
   let line_extension = 1000;
@@ -27,7 +29,7 @@ window.onload = () => {
     [getProjectedX(1), getProjectedY(1), 3],
     [getProjectedX(2), getProjectedY(1), 3],
     [getProjectedX(2), getProjectedY(0), 3],
-    
+
 
 
    
@@ -71,7 +73,7 @@ window.onload = () => {
   let shape_Y_arr = [];
 
 
-  let labels = ["A", "B", "C",'D','E','F'];
+  let labels = ["A", "B", "C","D","E","F"];
 
   
   
@@ -147,9 +149,14 @@ window.onload = () => {
   
   let axisOffset=0.5;
   function drawXY_axis(limX,limY) {
+    // context.strokeStyle = "blue";
+    // draw(getProjectedX(-limX-axisOffset), getProjectedX(limX+axisOffset), ch / 2, ch / 2);
+    // draw(cw / 2, cw / 2, getProjectedY(-limY-axisOffset), getProjectedY(limY+axisOffset));
+    // draw_ticks(limX,limY);
+    
     context.strokeStyle = "blue";
-    draw(getProjectedX(-limX-axisOffset), getProjectedX(limX+axisOffset), ch / 2, ch / 2);
-    draw(cw / 2, cw / 2, getProjectedY(-limY-axisOffset), getProjectedY(limY+axisOffset));
+    draw(getProjectedX(-limX-axisOffset), getProjectedX(limX+axisOffset), ch /ch_ratio, ch /ch_ratio);
+    draw(cw / cw_ratio, cw / cw_ratio, getProjectedY(-limY-axisOffset), getProjectedY(limY+axisOffset));
     draw_ticks(limX,limY);
 
   }
@@ -188,21 +195,21 @@ window.onload = () => {
   }
 
   function getProjectedX(xglobal) {
-    return  ((xglobal * cw) / step_pixles + cw / 2).toFixed(1);;
+    return  ((xglobal * cw) / step_pixles + cw / cw_ratio).toFixed(1);;
 
   }
 
   function getProjectedY(yglobal) {
-    return (-1 * ((yglobal * ch) / step_pixles) + ch / 2).toFixed(1);;
+    return (-1 * ((yglobal * ch) / step_pixles) + ch / ch_ratio).toFixed(1);;
   }
 
 
   function get_inversed_ProjectedX(x_in_pixels) {
-    return ((step_pixles/cw)*(x_in_pixels-cw/2)).toFixed(1); ;
+    return ((step_pixles/cw)*(x_in_pixels-cw/cw_ratio)).toFixed(1); ;
   }
 
   function get_inversed_ProjectedY(y_in_pixels) {
-    return (-1 * (step_pixles/ch)*(y_in_pixels-ch/2)).toFixed(1); ;
+    return (-1 * (step_pixles/ch)*(y_in_pixels-ch/ch_ratio)).toFixed(1); ;
   }
 
 
@@ -239,11 +246,11 @@ window.onload = () => {
         label=labels;
         if(get_inversed_ProjectedX(element[0])>0)
         {
-          write_txt(label[i]+'`',element[0][0]-get_inversed_ProjectedX(-1000), element[1])
+          write_txt(label[i]+'`',element[0][0]-get_inversed_ProjectedX(sq_width*step_pixles*2), element[1])
         }
         else
         {
-          write_txt(label[i]+'`',element[0][0]-get_inversed_ProjectedX(2000), element[1])
+          write_txt(label[i]+'`',element[0][0]-get_inversed_ProjectedX(sq_width*step_pixles*2), element[1])
 
         }
 
@@ -479,7 +486,7 @@ document.querySelector('.myClose').onclick=()=>
           drawDot(just_moving_X, just_moving_Y, DotSize, myBlue);
         }
 
-        if(opt_selector ==='draw-shape')
+        if(opt_selector ==='draw-shape' )
         {
           shape_X_arr.push(just_moving_X);
           shape_Y_arr.push(just_moving_Y);
@@ -553,7 +560,7 @@ document.querySelector('.myClose').onclick=()=>
     // D_global = D_global.toFixed(0);
 
     set_current_Distance(D_global);
-    write_txt("المسافة هي : " + D_global, canvas.width / 6, canvas.height / 3);
+    write_txt("المسافة هي : " + D_global, canvas.width / 6, canvas.height / 2);
   }
 
   function set_current_Distance(D_global) {
@@ -633,7 +640,9 @@ undo.onclick=()=>
         drawShape([[givenPoint[0],givenPoint[1]],[element[0],element[1]]], 'red', true, LineSize);
       });
 
+
       if (window.innerWidth <= 520) LineSize = 2;
+
 
       drawShape(shape_points, myLightBlue, false, LineSize,'A`');
  
@@ -652,7 +661,7 @@ undo.onclick=()=>
     drawY_lines();
     // drawXY_axis(4,4);
 
-    // write_txt("O", givenPoint[0], givenPoint[1] - sq_width / 2);
+    write_txt("O", givenPoint[0]- sq_width /1.5, givenPoint[1] );
     let redDotSize = 9;
     if (window.innerWidth < 991 && window.innerWidth > 520) redDotSize = 6;
     else if (window.innerWidth <= 520) redDotSize = 3;
@@ -670,13 +679,13 @@ undo.onclick=()=>
       // console.log(get_inversed_ProjectedY(y_pos));
 
      
-        if(get_inversed_ProjectedY(y_pos)>0)
+        if(get_inversed_ProjectedY(y_pos)>=0)
         {
-          write_txt(labels[i],x_pos, y_pos-get_inversed_ProjectedY(getProjectedY(10)),"0.8vw tj-b")
+          write_txt(labels[i],x_pos, y_pos-get_inversed_ProjectedY(sq_width),"0.9vw tj-b")
         }
         else
         {
-          write_txt(labels[i],x_pos, y_pos-get_inversed_ProjectedY(getProjectedY(-8)),"0.8vw tj-b")
+          write_txt(labels[i],x_pos, y_pos-get_inversed_ProjectedY(sq_width*step_pixles*1.5),"0.9vw tj-b")
 
         }
 
